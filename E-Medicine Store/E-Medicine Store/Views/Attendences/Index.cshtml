@@ -1,0 +1,62 @@
+﻿@model IEnumerable<E_Medicine_Store.Models.Attendence>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body>
+    <div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <h3 style="text-align:left">@Html.ActionLink("Create New", "Create")</h3>
+                <h2 style="text-align:center">Details</h2>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Date)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Status)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Staff.FirstName)
+                        </th>
+
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @if (Model != null)
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Date)
+                                </td>
+                                <td> 
+                                    @Html.DisplayFor(modelItem => item.Status)                                                    				     
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Staff.FirstName)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.AttendenceID }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.AttendenceID }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.AttendenceID })
+                                </td>
+                            </tr>
+                        }
+                    }
+
+
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</body>

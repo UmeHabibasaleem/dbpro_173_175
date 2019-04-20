@@ -1,0 +1,77 @@
+﻿@model IEnumerable<E_Medicine_Store.Models.Staff>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body>
+    <div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <h3 style="text-align:left">@Html.ActionLink("Create New", "Create")</h3>
+                <h2 style="text-align:center">Details</h2>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FirstName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.LastName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Join_Date)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Post)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DateOfBirth)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CNIC)
+                        </th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @if (Model != null)
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FirstName)
+                                </td>
+                                <td> @Html.DisplayFor(modelItem => item.LastName)                                                    				     </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Join_Date)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Post)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DateOfBirth)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CNIC)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.StaffID }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.StaffID }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.StaffID })
+                                </td>
+                            </tr>
+                        }
+                    }
+
+
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</body>
