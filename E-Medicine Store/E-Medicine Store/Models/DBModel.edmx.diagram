@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="110b4257598c4f2cab6791949e836545" Name="Diagram1">
+        <EntityTypeShape EntityType="DB5Model.Attendence" Width="1.5" PointX="8.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB5Model.Category" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB5Model.Comapny" Width="1.5" PointX="3.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB5Model.Customer" Width="1.5" PointX="8.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB5Model.Medicine" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB5Model.Salary" Width="1.5" PointX="6" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB5Model.SalaryStatu" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB5Model.Salesman" Width="1.5" PointX="6" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB5Model.Sell" Width="1.5" PointX="5.25" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB5Model.Staff" Width="1.5" PointX="6" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB5Model.Stock" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <AssociationConnector Association="DB5Model.FK_Attendence_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="DB5Model.FK_Medicine_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="DB5Model.FK_Salesman_Comapny" ManuallyRouted="false" />
+        <AssociationConnector Association="DB5Model.FK_Customer_Medicine" ManuallyRouted="false" />
+        <AssociationConnector Association="DB5Model.FK_Customer_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="DB5Model.FK_Medicine_Stock" ManuallyRouted="false" />
+        <AssociationConnector Association="DB5Model.FK_Sell_Medicine" ManuallyRouted="false" />
+        <AssociationConnector Association="DB5Model.FK_SalaryStatus_Salary" ManuallyRouted="false" />
+        <AssociationConnector Association="DB5Model.FK_SalaryStatus_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="DB5Model.FK_Salesman_Stock" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

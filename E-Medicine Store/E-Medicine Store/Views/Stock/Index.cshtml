@@ -1,0 +1,79 @@
+﻿@model IEnumerable<E_Medicine_Store.Models.Stock>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<body>
+    <div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <h3 style="text-align:left">@Html.ActionLink("Create New", "Create")</h3>
+                <h2 style="text-align:center">Index</h2>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+
+                        <th>
+                            @Html.DisplayNameFor(model => model.StockNumber)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Stockitem)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Description)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.StockType)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Quantity)
+                        </th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @if (Model != null)
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.StockNumber)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Stockitem)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.StockType)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Quantity)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.StockID }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.StockID }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.StockID })
+                                </td>
+                            </tr>
+                        }
+                    }
+
+
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</body>
+

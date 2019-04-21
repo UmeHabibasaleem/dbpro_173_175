@@ -1,0 +1,74 @@
+﻿@model IEnumerable<E_Medicine_Store.Models.Salesman>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body>
+    <div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <h3 style="text-align:left">@Html.ActionLink("Create New", "Create")</h3>
+                <h2 style="text-align:center">Index</h2>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CNIC)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Phone)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CompanyID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.StockID)
+                        </th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @if (Model != null)
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CNIC)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Phone)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CompanyID)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.StockID)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.SalesmanID }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.SalesmanID }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.SalesmanID })
+                                </td>
+                            </tr>
+                        }
+                    }
+
+
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</body>
+

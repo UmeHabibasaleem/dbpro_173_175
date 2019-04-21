@@ -16,6 +16,13 @@
     <link rel="stylesheet" href="~/Theme/assets/css/jquery.datetimepicker.min.css">
     <link rel="stylesheet" href="~/Theme/assets/css/linearicons.css">
     <link rel="stylesheet" href="~/Theme/assets/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="Index.css"> 
     <style>
         #main
         {
@@ -69,7 +76,10 @@
                     <nav id="nav-menu-container">
                     
                         <ul class="nav-menu">
-                            @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                            @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand"})
+                            @Html.ActionLink("Stock", "Index", "Stock", new { area = "" }, new { @class = "navbar-brand" })
+                            @Html.ActionLink("Salesman", "Index", "Salesman", new { area = "" }, new { @class = "navbar-brand" })
+                            @Html.ActionLink("Medicine", "Index", "Medicine", new { area = "" }, new { @class = "navbar-brand" })
                             <li><a href="/Account/Register" id="registerLink">Register</a></li>
                             <li><a href="/Account/Login" id="loginLink">Log in</a></li> 
                            
