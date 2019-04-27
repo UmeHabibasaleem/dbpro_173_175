@@ -112,6 +112,8 @@
     <EntitySetMapping Name="Staffs">
       <EntityTypeMapping TypeName="DB5Model.Staff">
         <MappingFragment StoreEntitySet="Staff">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="StaffID" ColumnName="StaffID" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />

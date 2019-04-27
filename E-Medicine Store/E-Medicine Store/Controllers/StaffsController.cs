@@ -33,6 +33,8 @@ namespace E_Medicine_Store
                     obj.OwnerId = s.OwnerId;
                     obj.Post = s.Post;
                     obj.CNIC = s.CNIC;
+                    obj.Password = s.Password;
+                    obj.Email = s.Email;
                     viewList.Add(obj);
                 }
 
@@ -60,7 +62,9 @@ namespace E_Medicine_Store
                 obj.OwnerId = s.OwnerId;
                 obj.Post = s.Post;
                 obj.CNIC = s.CNIC;
-                
+                obj.Password = s.Password;
+                obj.Email = s.Email;
+
             }
             return View(obj);
         }
@@ -88,6 +92,8 @@ namespace E_Medicine_Store
                 s.OwnerId = Ownerid;
                 s.Post = obj.Post;
                 s.CNIC = obj.CNIC;
+                s.Password = obj.Password;
+                s.Email = obj.Email;
                 db.Staffs.Add(s);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -118,6 +124,8 @@ namespace E_Medicine_Store
                 obj.OwnerId = s.OwnerId;
                 obj.Post = s.Post;
                 obj.CNIC = s.CNIC;
+                obj.Password = s.Password;
+                obj.Email = s.Email;
 
             }
             return View(obj);
@@ -135,6 +143,8 @@ namespace E_Medicine_Store
                 db.Staffs.Find(id).Post = obj.Post;
                 db.Staffs.Find(id).DateOfBirth = obj.DateOfBirth;
                 db.Staffs.Find(id).CNIC = obj.CNIC;
+                db.Staffs.Find(id).Email = obj.Email;
+                db.Staffs.Find(id).Password = obj.Password;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -163,6 +173,8 @@ namespace E_Medicine_Store
                 obj.OwnerId = s.OwnerId;
                 obj.Post = s.Post;
                 obj.CNIC = s.CNIC;
+                obj.Password = s.Password;
+                obj.Email = s.Email;
 
             }
             return View(obj);
@@ -185,6 +197,7 @@ namespace E_Medicine_Store
             }
         }
 
-       
+      
+
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace E_Medicine_Store.Models
 {
@@ -20,8 +21,6 @@ namespace E_Medicine_Store.Models
         public System.DateTime Join_Date { get; set; }
         [Required]
         public string Post { get; set; }
-
-       
         [Display(Name = "Date of Birth")]
         [DataType(DataType.Date)]
         public System.DateTime DateOfBirth { get; set; }
@@ -32,5 +31,13 @@ namespace E_Medicine_Store.Models
         [Required]
         [Display(Name = "Owner ID")]
         public int OwnerId { get; set; }
+        [EmailAddress]
+        [Index(IsUnique = true)]
+        [Required]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+        [Required]
+        [Display(Name = "Password")]
+        public string Password { get; set; }
     }
 }

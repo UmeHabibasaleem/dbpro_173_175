@@ -159,5 +159,44 @@ namespace E_Medicine_Store.Controllers
                 return View();
             }
         }
+        // GET: /Account/Login
+        [AllowAnonymous]
+        public ActionResult StaffLogin()
+        {
+            return View();
+        }
+
+        //
+        // POST: /Account/Login
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult StaffLogin(LoginModel model)
+        {
+            var result1 = (from emp in db.Staffs where emp.Email == model.Email select emp.Password).FirstOrDefault();
+
+
+            if (result1 == model.Password)
+
+            {
+                var result = (from emp in db.Staffs where emp.Email == model.Email select emp.OwnerId).FirstOrDefault();
+                var StaffId = (from emp in db.Staffs where emp.Email == model.Email select emp.StaffID).FirstOrDefault();
+                Session["OwnerId"] = result;
+                Session["StaffId"] = StaffId;
+                return RedirectToAction("OwnerProfile", "Home", new { id = result });
+
+            }
+
+            else
+
+            {
+
+                ViewBag.Message = string.Format("UserName and Password is incorrect");
+
+                return View();
+
+            }
+        }
+
     }
 }

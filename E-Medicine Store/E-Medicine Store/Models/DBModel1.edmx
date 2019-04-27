@@ -115,6 +115,8 @@
           <Property Name="DateOfBirth" Type="datetime" />
           <Property Name="CNIC" Type="nchar" MaxLength="13" Nullable="false" />
           <Property Name="OwnerId" Type="int" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Stock">
           <Key>
@@ -500,6 +502,8 @@
           <NavigationProperty Name="SalaryStatus" Relationship="Self.FK_SalaryStatus_Staff" FromRole="Staff" ToRole="SalaryStatus" />
           <NavigationProperty Name="Sells" Relationship="Self.FK_Sells_Staff" FromRole="Staff" ToRole="Sells" />
           <NavigationProperty Name="ShopOwner" Relationship="Self.FK_Staff_ShopOwner" FromRole="Staff" ToRole="ShopOwner" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Stock">
           <Key>
@@ -870,6 +874,8 @@
           <EntitySetMapping Name="Staffs">
             <EntityTypeMapping TypeName="DB5Model.Staff">
               <MappingFragment StoreEntitySet="Staff">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="StaffID" ColumnName="StaffID" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />

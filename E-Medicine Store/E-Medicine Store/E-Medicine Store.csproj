@@ -411,6 +411,8 @@
     <Content Include="Views\Home\OwnerProfile.cshtml" />
     <Content Include="Views\Home\Edit.cshtml" />
     <Content Include="Views\Stock\Delete.cshtml" />
+    <Content Include="Views\Staffs\StaffLogin.cshtml" />
+    <Content Include="Views\Home\StaffLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

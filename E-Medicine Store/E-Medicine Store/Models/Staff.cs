@@ -30,6 +30,8 @@ namespace E_Medicine_Store.Models
         public System.DateTime DateOfBirth { get; set; }
         public string CNIC { get; set; }
         public int OwnerId { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Attendence> Attendences { get; set; }

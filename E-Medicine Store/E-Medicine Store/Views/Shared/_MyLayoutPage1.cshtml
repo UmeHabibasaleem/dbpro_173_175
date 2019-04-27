@@ -79,11 +79,10 @@
                         <h1>Leading the way in medical excellence</h1>
                         <p>Earth greater grass for good. Place for divide evening yielding them that. Creeping beginning over gathered brought.</p>
                         <ul>
-                            <li>@Html.ActionLink("Register Shop", "Registeration", "Home" )</li>
-                            <li>@Html.ActionLink("Login", "Login", "Home")</li>
-
-                            <li><a href="" class="template-btn mt-3"></a>Regieter</li>
-                            <li><a href="" class="template-btn mt-3">Login </a></li>
+                            <li>@Html.ActionLink("Register Shop", "Registeration", "Home" ,new {@class = "template-btn mt-3" })</li>
+                            <li>@Html.ActionLink("Login Owner", "Login", "Home", new { @class = "template-btn mt-3" })</li>
+                            <li>@Html.ActionLink("Login staff", "StaffLogin", "Home", new { @class = "template-btn mt-3" })</li>
+                          
                         </ul>
                     </div>
                 </div>
