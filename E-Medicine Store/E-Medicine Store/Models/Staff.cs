@@ -18,8 +18,8 @@ namespace E_Medicine_Store.Models
         public Staff()
         {
             this.Attendences = new HashSet<Attendence>();
-            this.Customers = new HashSet<Customer>();
             this.SalaryStatus = new HashSet<SalaryStatu>();
+            this.Sells = new HashSet<Sell>();
         }
     
         public int StaffID { get; set; }
@@ -29,12 +29,14 @@ namespace E_Medicine_Store.Models
         public string Post { get; set; }
         public System.DateTime DateOfBirth { get; set; }
         public string CNIC { get; set; }
+        public int OwnerId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Attendence> Attendences { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Customer> Customers { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SalaryStatu> SalaryStatus { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Sell> Sells { get; set; }
+        public virtual ShopOwner ShopOwner { get; set; }
     }
 }

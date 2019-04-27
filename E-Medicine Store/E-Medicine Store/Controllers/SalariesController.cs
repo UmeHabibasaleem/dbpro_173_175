@@ -12,19 +12,47 @@ namespace E_Medicine_Store.Controllers
 {
     public class SalariesController : Controller
     {
-        private DB5Entities1 db = new DB5Entities1();
+        private DB5Entities3 db = new DB5Entities3();
 
         // GET: Salaries
         public ActionResult Index()
         {
-            return View();
+            try
+            {
+                List<Salary> list = db.Salaries.ToList();
+                List<SalaryViewModel> viewList = new List<SalaryViewModel>();
+                foreach (Salary s in list)
+                {
+                    SalaryViewModel obj = new SalaryViewModel();
+                    obj.SalaryId = s.SalaryId;
+                    obj.Scale = s.Scale;
+                    obj.SalaryAmount = s.SalaryAmount;
+                    viewList.Add(obj);
+                }
+                return View(viewList);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         // GET: Salaries/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
-
-            return View();
+            SalaryViewModel obj = new SalaryViewModel();
+            Salary s = db.Salaries.Find(id);
+            if (s == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                obj.SalaryId = s.SalaryId;
+                obj.Scale = s.Scale;
+                obj.SalaryAmount = s.SalaryAmount;
+            }
+            return View(obj);
         }
 
         // GET: Salaries/Create
@@ -37,39 +65,52 @@ namespace E_Medicine_Store.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(SalaryViewModel obj)
         {
             try
             {
-                // TODO: Add insert logic here
-
+                Salary  s = new Salary();
+                s.Scale = obj.Scale;
+                s.SalaryAmount = obj.SalaryAmount;
+                db.Salaries.Add(s);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception ex)
             {
                 return View();
             }
-
-
         }
 
         // GET: Salaries/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
-
-            return View();
+            SalaryViewModel obj = new SalaryViewModel();
+            Salary s = db.Salaries.Find(id);
+            if (s == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                obj.SalaryId = s.SalaryId;
+                obj.Scale = s.Scale;
+                obj.SalaryAmount = s.SalaryAmount;
+            }
+            return View(obj);
         }
 
         // POST: Salaries/Edit/5
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int? id, SalaryViewModel obj)
         {
             try
             {
-                // TODO: Add update logic here
-
+                db.Salaries.Find(id).Scale = obj.Scale;
+                db.Salaries.Find(id).SalaryAmount = obj.SalaryAmount;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
@@ -79,22 +120,35 @@ namespace E_Medicine_Store.Controllers
         }
 
         // GET: Salaries/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
-            return View();
+            SalaryViewModel obj = new SalaryViewModel();
+            Salary s = db.Salaries.Find(id);
+            if (s == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                obj.SalaryId = s.SalaryId;
+                obj.Scale = s.Scale;
+                obj.SalaryAmount = s.SalaryAmount;
+            }
+            return View(obj);
         }
 
         // POST: Salaries/Delete/5
         [HttpPost, ActionName("Delete")]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int? id, SalaryViewModel obj)
         {
             try
             {
-                // TODO: Add delete logic here
-
+                var v = db.Salaries.Where(a => a.SalaryId== id).First();
+                db.Entry(v).State = EntityState.Deleted;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception ex)
             {
                 return View();
             }

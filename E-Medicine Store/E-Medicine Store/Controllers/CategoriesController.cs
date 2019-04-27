@@ -12,18 +12,49 @@ namespace E_Medicine_Store.Controllers
 {
     public class CategoriesController : Controller
     {
-        private DB5Entities1 db = new DB5Entities1();
+        private DB5Entities3 db = new DB5Entities3();
 
         // GET: Categories
         public ActionResult Index()
         {
-            return View();
+            try
+            {
+                List<Category> list = db.Categories.ToList();
+                List<CategoryViewModel> viewList = new List<CategoryViewModel>();
+                foreach (Category C in list)
+                {
+                    CategoryViewModel obj = new CategoryViewModel();
+                    obj.CategoryID= C.CategoryID;
+                    obj.Name = C.Name;
+                    obj.Type = C.Type;
+                    obj.Description= C.Description;
+                    viewList.Add(obj);
+                }
+                return View(viewList);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         // GET: Categories/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
-            return View();
+            CategoryViewModel obj = new CategoryViewModel();
+            Category c = db.Categories.Find(id);
+            if (c == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                obj.CategoryID = c.CategoryID;
+                obj.Name = c.Name;
+                obj.Type = c.Type;
+                obj.Description = c.Description;
+            }
+            return View(obj);
         }
 
         // GET: Categories/Create
@@ -35,35 +66,54 @@ namespace E_Medicine_Store.Controllers
         // POST: Categories/Create
       
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(CategoryViewModel obj)
         {
             try
             {
-                // TODO: Add insert logic here
-
+                Category C1 = new Category();
+                C1.Name = obj.Name;
+                C1.Type = obj.Type;
+                C1.Description = obj.Description;
+                db.Categories.Add(C1);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception ex)
             {
                 return View();
             }
         }
 
         // GET: Categories/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
-            return View();
+            CategoryViewModel obj = new CategoryViewModel();
+            Category c = db.Categories.Find(id);
+            if (c == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                obj.CategoryID = c.CategoryID;
+                obj.Name = c.Name;
+                obj.Type = c.Type;
+                obj.Description = c.Description;
+            }
+            return View(obj);
         }
 
         // POST: Categories/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int? id, CategoryViewModel obj)
         {
             try
             {
-                // TODO: Add update logic here
-
+                db.Categories.Find(id).Name = obj.Name;
+                db.Categories.Find(id).Type = obj.Type;
+                db.Categories.Find(id).Description = obj.Description;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
@@ -73,22 +123,36 @@ namespace E_Medicine_Store.Controllers
         }
 
         // GET: Categories/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
-            return View();
+            CategoryViewModel obj = new CategoryViewModel();
+            Category c = db.Categories.Find(id);
+            if (c == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                obj.CategoryID = c.CategoryID;
+                obj.Name = c.Name;
+                obj.Type = c.Type;
+                obj.Description = c.Description;
+            }
+            return View(obj);
         }
 
         // POST: Categories/Delete/5
         [HttpPost, ActionName("Delete")]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int? id, CategoryViewModel obj)
         {
             try
             {
-                // TODO: Add delete logic here
-
+                var v = db.Categories.Where(a => a.CategoryID == id).First();
+                db.Entry(v).State = EntityState.Deleted;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception ex)
             {
                 return View();
             }

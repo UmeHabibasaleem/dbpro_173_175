@@ -7,23 +7,62 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using E_Medicine_Store.Models;
+using Microsoft.AspNet.Identity;
 
 namespace E_Medicine_Store
 {
     public class StaffsController : Controller
     {
-        private DB5Entities1 db = new DB5Entities1();
-
+        DB5Entities3 db = new DB5Entities3();
         // GET: Staffs
         public ActionResult Index()
         {
-            return View();
+            var id = (int)Session["OwnerId"];
+            List<Staff> list = db.Staffs.ToList();
+            List<StaffViewModel> viewList = new List<StaffViewModel>();
+            foreach (Staff s in list)
+            {
+               if (s.OwnerId == id)
+                {
+                    StaffViewModel obj = new StaffViewModel();
+                    obj.StaffID = s.StaffID;
+                    obj.FirstName = s.FirstName;
+                    obj.LastName = s.LastName;
+                    obj.DateOfBirth = s.DateOfBirth;
+                    obj.Join_Date = s.Join_Date;
+                    obj.OwnerId = s.OwnerId;
+                    obj.Post = s.Post;
+                    obj.CNIC = s.CNIC;
+                    viewList.Add(obj);
+                }
+
+            }
+            return View(viewList);
+
         }
 
         // GET: Staffs/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
-            return View();
+            StaffViewModel obj = new StaffViewModel();
+            Staff s = db.Staffs.Find(id);
+            if (s == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                obj.StaffID = s.StaffID;
+                obj.FirstName = s.FirstName;
+                obj.LastName = s.LastName;
+                obj.DateOfBirth = s.DateOfBirth;
+                obj.Join_Date = s.Join_Date;
+                obj.OwnerId = s.OwnerId;
+                obj.Post = s.Post;
+                obj.CNIC = s.CNIC;
+                
+            }
+            return View(obj);
         }
 
         // GET: Staffs/Create
@@ -36,15 +75,24 @@ namespace E_Medicine_Store
         
         [HttpPost]
 
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(StaffViewModel obj)
         {
+            var Ownerid = (int)Session["OwnerId"];
             try
             {
-                // TODO: Add insert logic here
-
+                Staff s = new Staff();
+                s.FirstName = obj.FirstName;
+                s.LastName = obj.LastName;
+                s.DateOfBirth = obj.DateOfBirth;
+                s.Join_Date = obj.Join_Date;
+                s.OwnerId = Ownerid;
+                s.Post = obj.Post;
+                s.CNIC = obj.CNIC;
+                db.Staffs.Add(s);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception ex)
             {
                 return View();
             }
@@ -52,19 +100,42 @@ namespace E_Medicine_Store
 
 
         // GET: Staffs/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
-            return View();
+            StaffViewModel obj = new StaffViewModel();
+            Staff s = db.Staffs.Find(id);
+            if (s == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                obj.StaffID = s.StaffID;
+                obj.FirstName = s.FirstName;
+                obj.LastName = s.LastName;
+                obj.DateOfBirth = s.DateOfBirth;
+                obj.Join_Date = s.Join_Date;
+                obj.OwnerId = s.OwnerId;
+                obj.Post = s.Post;
+                obj.CNIC = s.CNIC;
+
+            }
+            return View(obj);
         }
         // POST: Staffs/Edit/5
        
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int? id, StaffViewModel obj)
         {
             try
             {
-                // TODO: Add update logic here
-
+                db.Staffs.Find(id).FirstName = obj.FirstName;
+                db.Staffs.Find(id).LastName = obj.LastName;
+                db.Staffs.Find(id).Join_Date = obj.Join_Date;
+                db.Staffs.Find(id).Post = obj.Post;
+                db.Staffs.Find(id).DateOfBirth = obj.DateOfBirth;
+                db.Staffs.Find(id).CNIC = obj.CNIC;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
@@ -74,22 +145,41 @@ namespace E_Medicine_Store
         }
 
         // GET: Staffs/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
-            return View();
+            StaffViewModel obj = new StaffViewModel();
+            Staff s = db.Staffs.Find(id);
+            if (s == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                obj.StaffID = s.StaffID;
+                obj.FirstName = s.FirstName;
+                obj.LastName = s.LastName;
+                obj.DateOfBirth = s.DateOfBirth;
+                obj.Join_Date = s.Join_Date;
+                obj.OwnerId = s.OwnerId;
+                obj.Post = s.Post;
+                obj.CNIC = s.CNIC;
+
+            }
+            return View(obj);
         }
 
         // POST: Staffs/Delete/5
         [HttpPost, ActionName("Delete")]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int? id, StaffViewModel obj)
         {
             try
             {
-                // TODO: Add delete logic here
-
+                var v = db.Staffs.Where(a => a.StaffID == id).First();
+                db.Entry(v).State = EntityState.Deleted;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception ex)
             {
                 return View();
             }

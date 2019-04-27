@@ -12,18 +12,12 @@ namespace E_Medicine_Store.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Customer
+    public partial class MedicalStore
     {
-        public int CustomerId { get; set; }
-        public string Customer_Name { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Address { get; set; }
-        public int MedicId { get; set; }
-        public string Medicine_Description { get; set; }
-        public Nullable<int> Price { get; set; }
-        public Nullable<int> StaffId { get; set; }
+        public int ShopId { get; set; }
+        public string ShopName { get; set; }
+        public string ShopAddress { get; set; }
     
-        public virtual Medicine Medicine { get; set; }
-        public virtual Staff Staff { get; set; }
+        public virtual ShopOwner ShopOwner { get; set; }
     }
 }

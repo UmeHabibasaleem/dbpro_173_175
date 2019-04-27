@@ -22,15 +22,17 @@ namespace E_Medicine_Store.Models
         }
     
         public int StockID { get; set; }
-        public Nullable<int> StockNumber { get; set; }
+        public int StockNumber { get; set; }
         public string Stockitem { get; set; }
         public string Description { get; set; }
         public string StockType { get; set; }
-        public Nullable<int> Quantity { get; set; }
+        public int Quantity { get; set; }
+        public int OwnerId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Medicine> Medicines { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Salesman> Salesmen { get; set; }
+        public virtual ShopOwner ShopOwner { get; set; }
     }
 }

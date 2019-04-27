@@ -159,7 +159,6 @@ C:\Users\Abubakar\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Sto
 C:\Users\Abubakar\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Abubakar\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Abubakar\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Abubakar\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\obj\Debug\E-Medicine Store.csprojResolveAssemblyReference.cache
 C:\Users\Abubakar\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\obj\Debug\E-Medicine Store.dll
 C:\Users\Abubakar\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\obj\Debug\E-Medicine Store.pdb
 C:\Users\Ahmad\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\bin\ApplicationInsights.config
@@ -244,3 +243,4 @@ C:\Users\Ahmad\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\
 C:\Users\Ahmad\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\obj\Debug\E-Medicine Store.csprojResolveAssemblyReference.cache
 C:\Users\Ahmad\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\obj\Debug\E-Medicine Store.dll
 C:\Users\Ahmad\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\obj\Debug\E-Medicine Store.pdb
+C:\Users\Abubakar\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\obj\Debug\E-Medicine Store.csprojResolveAssemblyReference.cache

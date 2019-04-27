@@ -1,4 +1,4 @@
-﻿@model E_Medicine_Store.Models.Salary
+﻿@model E_Medicine_Store.Models.SalaryViewModel
 
 @{
     ViewBag.Title = "Details";
@@ -11,6 +11,14 @@
     <h4>Salary</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SalaryId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SalaryId)
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.Scale)
         </dt>

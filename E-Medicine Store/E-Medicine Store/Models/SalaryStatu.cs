@@ -14,7 +14,7 @@ namespace E_Medicine_Store.Models
     
     public partial class SalaryStatu
     {
-        public string ID { get; set; }
+        public int ID { get; set; }
         public Nullable<int> SalaryID { get; set; }
         public Nullable<int> StaffID { get; set; }
         public string Status { get; set; }

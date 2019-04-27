@@ -1,4 +1,4 @@
-﻿@model IEnumerable<E_Medicine_Store.Models.Stock>
+﻿@model IEnumerable<E_Medicine_Store.Models.StockViewModel>
 
 @{
     ViewBag.Title = "Index";
@@ -18,6 +18,9 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.StockID)
+                        </th>
 
                         <th>
                             @Html.DisplayNameFor(model => model.StockNumber)
@@ -44,6 +47,9 @@
                         foreach (var item in Model)
                         {
                             <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.StockID)
+                                </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.StockNumber)
                                 </td>

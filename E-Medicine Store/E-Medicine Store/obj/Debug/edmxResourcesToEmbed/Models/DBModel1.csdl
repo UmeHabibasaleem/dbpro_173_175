@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB5Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Attendence">
+    <Key>
+      <PropertyRef Name="AttendenceID" />
+    </Key>
+    <Property Name="AttendenceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StaffID" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Staff" Relationship="Self.FK_Attendence_Staff" FromRole="Attendence" ToRole="Staff" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Medicines" Relationship="Self.FK_Medicine_Category" FromRole="Category" ToRole="Medicine" />
+  </EntityType>
+  <EntityType Name="Comapny">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Salesmen" Relationship="Self.FK_Salesman_Comapny" FromRole="Comapny" ToRole="Salesman" />
+  </EntityType>
+  <EntityType Name="MedicalStore">
+    <Key>
+      <PropertyRef Name="ShopId" />
+    </Key>
+    <Property Name="ShopId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShopName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShopAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ShopOwner" Relationship="Self.FK_ShopOwner_MedicalStore" FromRole="MedicalStore" ToRole="ShopOwner" />
+  </EntityType>
+  <EntityType Name="Medicine">
+    <Key>
+      <PropertyRef Name="MedID" />
+    </Key>
+    <Property Name="MedID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Measurement" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="StockID" Type="Int32" />
+    <Property Name="CategoryID" Type="Int32" />
+    <NavigationProperty Name="Category" Relationship="Self.FK_Medicine_Category" FromRole="Medicine" ToRole="Category" />
+    <NavigationProperty Name="Stock" Relationship="Self.FK_Medicine_Stock" FromRole="Medicine" ToRole="Stock" />
+    <NavigationProperty Name="Sells" Relationship="Self.FK_Sells_Medicine" FromRole="Medicine" ToRole="Sells" />
+  </EntityType>
+  <EntityType Name="Salary">
+    <Key>
+      <PropertyRef Name="SalaryId" />
+    </Key>
+    <Property Name="SalaryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Scale" Type="Int32" Nullable="false" />
+    <Property Name="SalaryAmount" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="SalaryStatus" Relationship="Self.FK_SalaryStatus_Salary" FromRole="Salary" ToRole="SalaryStatus" />
+  </EntityType>
+  <EntityType Name="SalaryStatu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SalaryID" Type="Int32" />
+    <Property Name="StaffID" Type="Int32" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Salary" Relationship="Self.FK_SalaryStatus_Salary" FromRole="SalaryStatus" ToRole="Salary" />
+    <NavigationProperty Name="Staff" Relationship="Self.FK_SalaryStatus_Staff" FromRole="SalaryStatus" ToRole="Staff" />
+  </EntityType>
+  <EntityType Name="Salesman">
+    <Key>
+      <PropertyRef Name="SalesmanID" />
+    </Key>
+    <Property Name="SalesmanID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CNIC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyID" Type="Int32" Nullable="false" />
+    <Property Name="StockID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Comapny" Relationship="Self.FK_Salesman_Comapny" FromRole="Salesman" ToRole="Comapny" />
+    <NavigationProperty Name="Stock" Relationship="Self.FK_Salesman_Stock" FromRole="Salesman" ToRole="Stock" />
+  </EntityType>
+  <EntityType Name="Sell">
+    <Key>
+      <PropertyRef Name="SellId" />
+    </Key>
+    <Property Name="SellId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MedId" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="StaffId" Type="Int32" Nullable="false" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Medicine" Relationship="Self.FK_Sells_Medicine" FromRole="Sells" ToRole="Medicine" />
+    <NavigationProperty Name="Staff" Relationship="Self.FK_Sells_Staff" FromRole="Sells" ToRole="Staff" />
+  </EntityType>
+  <EntityType Name="ShopOwner">
+    <Key>
+      <PropertyRef Name="OwnerId" />
+    </Key>
+    <Property Name="OwnerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CNIC" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Confirm_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShopId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="MedicalStore" Relationship="Self.FK_ShopOwner_MedicalStore" FromRole="ShopOwner" ToRole="MedicalStore" />
+    <NavigationProperty Name="Staffs" Relationship="Self.FK_Staff_ShopOwner" FromRole="ShopOwner" ToRole="Staff" />
+    <NavigationProperty Name="Stocks" Relationship="Self.FK_Stock_ShopOwner" FromRole="ShopOwner" ToRole="Stock" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="StaffID" />
+    </Key>
+    <Property Name="StaffID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Join_Date" Type="DateTime" Precision="3" />
+    <Property Name="Post" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+    <Property Name="CNIC" Type="String" MaxLength="13" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="OwnerId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Attendences" Relationship="Self.FK_Attendence_Staff" FromRole="Staff" ToRole="Attendence" />
+    <NavigationProperty Name="SalaryStatus" Relationship="Self.FK_SalaryStatus_Staff" FromRole="Staff" ToRole="SalaryStatus" />
+    <NavigationProperty Name="Sells" Relationship="Self.FK_Sells_Staff" FromRole="Staff" ToRole="Sells" />
+    <NavigationProperty Name="ShopOwner" Relationship="Self.FK_Staff_ShopOwner" FromRole="Staff" ToRole="ShopOwner" />
+  </EntityType>
+  <EntityType Name="Stock">
+    <Key>
+      <PropertyRef Name="StockID" />
+    </Key>
+    <Property Name="StockID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StockNumber" Type="Int32" />
+    <Property Name="Stockitem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StockType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="OwnerId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Medicines" Relationship="Self.FK_Medicine_Stock" FromRole="Stock" ToRole="Medicine" />
+    <NavigationProperty Name="Salesmen" Relationship="Self.FK_Salesman_Stock" FromRole="Stock" ToRole="Salesman" />
+    <NavigationProperty Name="ShopOwner" Relationship="Self.FK_Stock_ShopOwner" FromRole="Stock" ToRole="ShopOwner" />
+  </EntityType>
+  <Association Name="FK_Attendence_Staff">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Attendence" Type="Self.Attendence" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="StaffID" />
+      </Principal>
+      <Dependent Role="Attendence">
+        <PropertyRef Name="StaffID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Medicine_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Medicine" Type="Self.Medicine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Medicine">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Salesman_Comapny">
+    <End Role="Comapny" Type="Self.Comapny" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Salesman" Type="Self.Salesman" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comapny">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="Salesman">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShopOwner_MedicalStore">
+    <End Role="MedicalStore" Type="Self.MedicalStore" Multiplicity="1" />
+    <End Role="ShopOwner" Type="Self.ShopOwner" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="MedicalStore">
+        <PropertyRef Name="ShopId" />
+      </Principal>
+      <Dependent Role="ShopOwner">
+        <PropertyRef Name="OwnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Medicine_Stock">
+    <End Role="Stock" Type="Self.Stock" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Medicine" Type="Self.Medicine" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="StockID" />
+      </Principal>
+      <Dependent Role="Medicine">
+        <PropertyRef Name="StockID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sells_Medicine">
+    <End Role="Medicine" Type="Self.Medicine" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Sells" Type="Self.Sell" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Medicine">
+        <PropertyRef Name="MedID" />
+      </Principal>
+      <Dependent Role="Sells">
+        <PropertyRef Name="MedId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SalaryStatus_Salary">
+    <End Role="Salary" Type="Self.Salary" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SalaryStatus" Type="Self.SalaryStatu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Salary">
+        <PropertyRef Name="SalaryId" />
+      </Principal>
+      <Dependent Role="SalaryStatus">
+        <PropertyRef Name="SalaryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SalaryStatus_Staff">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SalaryStatus" Type="Self.SalaryStatu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="StaffID" />
+      </Principal>
+      <Dependent Role="SalaryStatus">
+        <PropertyRef Name="StaffID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Salesman_Stock">
+    <End Role="Stock" Type="Self.Stock" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Salesman" Type="Self.Salesman" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="StockID" />
+      </Principal>
+      <Dependent Role="Salesman">
+        <PropertyRef Name="StockID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sells_Staff">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Sells" Type="Self.Sell" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="StaffID" />
+      </Principal>
+      <Dependent Role="Sells">
+        <PropertyRef Name="StaffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Staff_ShopOwner">
+    <End Role="ShopOwner" Type="Self.ShopOwner" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ShopOwner">
+        <PropertyRef Name="OwnerId" />
+      </Principal>
+      <Dependent Role="Staff">
+        <PropertyRef Name="OwnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Stock_ShopOwner">
+    <End Role="ShopOwner" Type="Self.ShopOwner" Multiplicity="1" />
+    <End Role="Stock" Type="Self.Stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ShopOwner">
+        <PropertyRef Name="OwnerId" />
+      </Principal>
+      <Dependent Role="Stock">
+        <PropertyRef Name="OwnerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DB5Entities3" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Attendences" EntityType="Self.Attendence" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Comapnies" EntityType="Self.Comapny" />
+    <EntitySet Name="MedicalStores" EntityType="Self.MedicalStore" />
+    <EntitySet Name="Medicines" EntityType="Self.Medicine" />
+    <EntitySet Name="Salaries" EntityType="Self.Salary" />
+    <EntitySet Name="SalaryStatus" EntityType="Self.SalaryStatu" />
+    <EntitySet Name="Salesmen" EntityType="Self.Salesman" />
+    <EntitySet Name="Sells" EntityType="Self.Sell" />
+    <EntitySet Name="ShopOwners" EntityType="Self.ShopOwner" />
+    <EntitySet Name="Staffs" EntityType="Self.Staff" />
+    <EntitySet Name="Stocks" EntityType="Self.Stock" />
+    <AssociationSet Name="FK_Attendence_Staff" Association="Self.FK_Attendence_Staff">
+      <End Role="Staff" EntitySet="Staffs" />
+      <End Role="Attendence" EntitySet="Attendences" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Medicine_Category" Association="Self.FK_Medicine_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Medicine" EntitySet="Medicines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Salesman_Comapny" Association="Self.FK_Salesman_Comapny">
+      <End Role="Comapny" EntitySet="Comapnies" />
+      <End Role="Salesman" EntitySet="Salesmen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShopOwner_MedicalStore" Association="Self.FK_ShopOwner_MedicalStore">
+      <End Role="MedicalStore" EntitySet="MedicalStores" />
+      <End Role="ShopOwner" EntitySet="ShopOwners" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Medicine_Stock" Association="Self.FK_Medicine_Stock">
+      <End Role="Stock" EntitySet="Stocks" />
+      <End Role="Medicine" EntitySet="Medicines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sells_Medicine" Association="Self.FK_Sells_Medicine">
+      <End Role="Medicine" EntitySet="Medicines" />
+      <End Role="Sells" EntitySet="Sells" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SalaryStatus_Salary" Association="Self.FK_SalaryStatus_Salary">
+      <End Role="Salary" EntitySet="Salaries" />
+      <End Role="SalaryStatus" EntitySet="SalaryStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SalaryStatus_Staff" Association="Self.FK_SalaryStatus_Staff">
+      <End Role="Staff" EntitySet="Staffs" />
+      <End Role="SalaryStatus" EntitySet="SalaryStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Salesman_Stock" Association="Self.FK_Salesman_Stock">
+      <End Role="Stock" EntitySet="Stocks" />
+      <End Role="Salesman" EntitySet="Salesmen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sells_Staff" Association="Self.FK_Sells_Staff">
+      <End Role="Staff" EntitySet="Staffs" />
+      <End Role="Sells" EntitySet="Sells" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Staff_ShopOwner" Association="Self.FK_Staff_ShopOwner">
+      <End Role="ShopOwner" EntitySet="ShopOwners" />
+      <End Role="Staff" EntitySet="Staffs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Stock_ShopOwner" Association="Self.FK_Stock_ShopOwner">
+      <End Role="ShopOwner" EntitySet="ShopOwners" />
+      <End Role="Stock" EntitySet="Stocks" />
+    </AssociationSet>
+    <EntitySet Name="sysdiagrams" EntityType="DB5Model.sysdiagram" />
+  </EntityContainer>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+</Schema>

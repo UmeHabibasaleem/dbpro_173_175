@@ -15,11 +15,13 @@ namespace E_Medicine_Store.Models
     public partial class Sell
     {
         public int SellId { get; set; }
-        public Nullable<int> MedID { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
-        public Nullable<int> Price { get; set; }
-        public Nullable<int> Quantity { get; set; }
+        public int MedId { get; set; }
+        public int Price { get; set; }
+        public int StaffId { get; set; }
+        public string CustomerName { get; set; }
+        public System.DateTime Date { get; set; }
     
         public virtual Medicine Medicine { get; set; }
+        public virtual Staff Staff { get; set; }
     }
 }

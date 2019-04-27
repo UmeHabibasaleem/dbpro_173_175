@@ -22,7 +22,7 @@ namespace E_Medicine_Store.Models
     
         public int SalaryId { get; set; }
         public int Scale { get; set; }
-        public Nullable<int> SalaryAmount { get; set; }
+        public int SalaryAmount { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SalaryStatu> SalaryStatus { get; set; }

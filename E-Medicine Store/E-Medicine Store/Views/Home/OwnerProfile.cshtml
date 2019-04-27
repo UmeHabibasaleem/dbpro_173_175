@@ -1,0 +1,67 @@
+﻿@model E_Medicine_Store.Models.Registration
+
+@{
+    ViewBag.Title = "OwnerProfile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>OwnerProfile</h2>
+
+<div>
+    <h4>Registration</h4>
+    <hr />
+    <dl class="dl-horizontal">
+         @Html.Hidden("OwnerId")
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CNIC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CNIC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Confirm_Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Confirm_Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShopName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShopName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShopAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShopAddress)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.OwnerId }) 
+   
+</p>

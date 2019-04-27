@@ -12,7 +12,7 @@ namespace E_Medicine_Store.Controllers
 {
     public class AttendencesController : Controller
     {
-        private DB5Entities1 db = new DB5Entities1();
+       private DB5Entities3 db = new DB5Entities3();
 
         // GET: Attendences
         public ActionResult Index()
