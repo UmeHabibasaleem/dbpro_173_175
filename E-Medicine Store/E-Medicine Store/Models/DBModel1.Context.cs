@@ -13,10 +13,10 @@ namespace E_Medicine_Store.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DB5Entities3 : DbContext
+    public partial class DB5Entities5 : DbContext
     {
-        public DB5Entities3()
-            : base("name=DB5Entities3")
+        public DB5Entities5()
+            : base("name=DB5Entities5")
         {
         }
     

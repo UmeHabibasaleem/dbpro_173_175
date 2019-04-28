@@ -4,19 +4,20 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3b741e3667ec434aa5334a5a3c99f8f0" Name="Diagram1">
+      <Diagram DiagramId="0236beaf11244034b265d5fe4594e7e7" Name="Diagram1">
         <EntityTypeShape EntityType="DB5Model.Attendence" Width="1.5" PointX="7.5" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB5Model.Category" Width="1.5" PointX="5.25" PointY="14.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB5Model.Comapny" Width="1.5" PointX="8.25" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB5Model.Category" Width="1.5" PointX="5.25" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB5Model.Comapny" Width="1.5" PointX="8.25" PointY="17.5" IsExpanded="true" />
         <EntityTypeShape EntityType="DB5Model.MedicalStore" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB5Model.Medicine" Width="1.5" PointX="7.5" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB5Model.Medicine" Width="1.5" PointX="7.5" PointY="13" IsExpanded="true" />
         <EntityTypeShape EntityType="DB5Model.Salary" Width="1.5" PointX="5.25" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="DB5Model.SalaryStatu" Width="1.5" PointX="7.5" PointY="3.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB5Model.Salesman" Width="1.5" PointX="10.5" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB5Model.Salesman" Width="1.5" PointX="10.5" PointY="10.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DB5Model.Sell" Width="1.5" PointX="7.5" PointY="9.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DB5Model.ShopOwner" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB5Model.Staff" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DB5Model.Stock" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB5Model.Staff" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB5Model.Stock" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB5Model.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="DB5Model.FK_Attendence_Staff" ManuallyRouted="false" />
         <AssociationConnector Association="DB5Model.FK_Medicine_Category" ManuallyRouted="false" />
         <AssociationConnector Association="DB5Model.FK_Salesman_Comapny" ManuallyRouted="false" />
@@ -29,7 +30,6 @@
         <AssociationConnector Association="DB5Model.FK_Sells_Staff" ManuallyRouted="false" />
         <AssociationConnector Association="DB5Model.FK_Staff_ShopOwner" ManuallyRouted="false" />
         <AssociationConnector Association="DB5Model.FK_Stock_ShopOwner" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="DB5Model.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

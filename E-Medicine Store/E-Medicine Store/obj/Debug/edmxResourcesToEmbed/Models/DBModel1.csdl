@@ -25,7 +25,7 @@
       <PropertyRef Name="CompanyID" />
     </Key>
     <Property Name="CompanyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="CompanyAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="CompanyType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Salesmen" Relationship="Self.FK_Salesman_Comapny" FromRole="Comapny" ToRole="Salesman" />
@@ -105,7 +105,7 @@
     <Key>
       <PropertyRef Name="OwnerId" />
     </Key>
-    <Property Name="OwnerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OwnerId" Type="Int32" Nullable="false" />
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="CNIC" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -127,12 +127,12 @@
     <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
     <Property Name="CNIC" Type="String" MaxLength="13" FixedLength="true" Unicode="true" Nullable="false" />
     <Property Name="OwnerId" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Attendences" Relationship="Self.FK_Attendence_Staff" FromRole="Staff" ToRole="Attendence" />
     <NavigationProperty Name="SalaryStatus" Relationship="Self.FK_SalaryStatus_Staff" FromRole="Staff" ToRole="SalaryStatus" />
     <NavigationProperty Name="Sells" Relationship="Self.FK_Sells_Staff" FromRole="Staff" ToRole="Sells" />
     <NavigationProperty Name="ShopOwner" Relationship="Self.FK_Staff_ShopOwner" FromRole="Staff" ToRole="ShopOwner" />
-    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Stock">
     <Key>
@@ -148,6 +148,16 @@
     <NavigationProperty Name="Medicines" Relationship="Self.FK_Medicine_Stock" FromRole="Stock" ToRole="Medicine" />
     <NavigationProperty Name="Salesmen" Relationship="Self.FK_Salesman_Stock" FromRole="Stock" ToRole="Salesman" />
     <NavigationProperty Name="ShopOwner" Relationship="Self.FK_Stock_ShopOwner" FromRole="Stock" ToRole="ShopOwner" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <Association Name="FK_Attendence_Staff">
     <End Role="Staff" Type="Self.Staff" Multiplicity="0..1">
@@ -313,7 +323,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="DB5Entities3" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="DB5Entities5" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Attendences" EntityType="Self.Attendence" />
     <EntitySet Name="Categories" EntityType="Self.Category" />
     <EntitySet Name="Comapnies" EntityType="Self.Comapny" />
@@ -326,6 +336,7 @@
     <EntitySet Name="ShopOwners" EntityType="Self.ShopOwner" />
     <EntitySet Name="Staffs" EntityType="Self.Staff" />
     <EntitySet Name="Stocks" EntityType="Self.Stock" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <AssociationSet Name="FK_Attendence_Staff" Association="Self.FK_Attendence_Staff">
       <End Role="Staff" EntitySet="Staffs" />
       <End Role="Attendence" EntitySet="Attendences" />
@@ -374,16 +385,5 @@
       <End Role="ShopOwner" EntitySet="ShopOwners" />
       <End Role="Stock" EntitySet="Stocks" />
     </AssociationSet>
-    <EntitySet Name="sysdiagrams" EntityType="DB5Model.sysdiagram" />
   </EntityContainer>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
 </Schema>

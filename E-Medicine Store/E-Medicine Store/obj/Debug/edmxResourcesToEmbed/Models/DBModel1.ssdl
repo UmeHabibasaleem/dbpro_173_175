@@ -23,7 +23,7 @@
       <PropertyRef Name="CompanyID" />
     </Key>
     <Property Name="CompanyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
     <Property Name="CompanyAddress" Type="nvarchar(max)" />
     <Property Name="CompanyType" Type="nvarchar" MaxLength="50" />
   </EntityType>

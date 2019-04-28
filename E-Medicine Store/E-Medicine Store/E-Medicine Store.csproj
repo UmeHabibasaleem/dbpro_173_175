@@ -44,6 +44,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -246,6 +249,7 @@
     <Compile Include="Models\Medicine.cs">
       <DependentUpon>DBModel1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\MedicineViewModel.cs" />
     <Compile Include="Models\Registration.cs" />
     <Compile Include="Models\Salary.cs">
       <DependentUpon>DBModel1.tt</DependentUpon>
@@ -257,6 +261,7 @@
     <Compile Include="Models\Salesman.cs">
       <DependentUpon>DBModel1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SalesmanViewModel.cs" />
     <Compile Include="Models\Sell.cs">
       <DependentUpon>DBModel1.tt</DependentUpon>
     </Compile>
@@ -432,6 +437,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

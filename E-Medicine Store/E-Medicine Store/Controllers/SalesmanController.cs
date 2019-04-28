@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using  E_Medicine_Store.Models;
 namespace E_Medicine_Store.Controllers
 {
     public class SalesmanController : Controller
     {
+        DB5Entities5 db = new DB5Entities5();
         // GET: Salesman
         public ActionResult Index()
         {
@@ -21,25 +25,28 @@ namespace E_Medicine_Store.Controllers
         }
 
         // GET: Salesman/Create
+        [HttpGet]
         public ActionResult Create()
         {
-            return View();
+          SalesmanViewModel salesman = new SalesmanViewModel();
+            using (DB5Entities5 db = new DB5Entities5())
+            {
+                
+               salesman.CompanyCollection = db.Comapnies.ToList<Comapny>();
+            }
+
+                return View(salesman);
         }
+
+      
 
         // POST: Salesman/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(SalesmanViewModel sales)
         {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
+          
                 return View();
-            }
+            
         }
 
         // GET: Salesman/Edit/5

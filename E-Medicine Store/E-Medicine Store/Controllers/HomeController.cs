@@ -9,7 +9,7 @@ namespace E_Medicine_Store.Controllers
 {
     public class HomeController : Controller
     {
-        DB5Entities3 db = new DB5Entities3();
+        DB5Entities5 db = new DB5Entities5();
         public ActionResult Index()
         {
             return View();
