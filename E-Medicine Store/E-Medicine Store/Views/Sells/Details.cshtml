@@ -1,4 +1,4 @@
-﻿@model E_Medicine_Store.Models.Sell
+﻿@model E_Medicine_Store.Models.SellsViewModel
 
 @{
     ViewBag.Title = "Details";
@@ -27,21 +27,12 @@
             @Html.DisplayFor(model => model.Price)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Quantity)
-        </dt>
+        
 
-        <dd>
-            @Html.DisplayFor(model => model.Quantity)
-        </dd>
+        
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Medicine.Name)
-        </dt>
+      
 
-        <dd>
-            @Html.DisplayFor(model => model.Medicine.Name)
-        </dd>
 
     </dl>
 </div>
