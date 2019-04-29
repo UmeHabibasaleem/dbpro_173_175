@@ -43,8 +43,8 @@
     <EntitySetMapping Name="Medicines">
       <EntityTypeMapping TypeName="DB5Model.Medicine">
         <MappingFragment StoreEntitySet="Medicine">
-          <ScalarProperty Name="MedID" ColumnName="MedID" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MedId" ColumnName="MedId" />
+          <ScalarProperty Name="MedicineName" ColumnName="MedicineName" />
           <ScalarProperty Name="Company" ColumnName="Company" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Measurement" ColumnName="Measurement" />

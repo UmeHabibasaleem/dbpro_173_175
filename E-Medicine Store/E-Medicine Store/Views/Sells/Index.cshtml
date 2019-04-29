@@ -15,16 +15,19 @@
                 <thead>
                     <tr>
                         <th>
-                            @Html.DisplayNameFor(model => model.Date)
+                            @Html.DisplayNameFor(model => model.MedId)
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.Price)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.Quantity)
+                            @Html.DisplayNameFor(model => model.StaffId)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.Medicine.Name)
+                            @Html.DisplayNameFor(model => model.CustomerName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Date)
                         </th>
 
                         <th>Action</th>
@@ -38,17 +41,19 @@
                         {
                             <tr>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Date)
+                                    @Html.DisplayNameFor(model => model.MedId)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Price)
-                                </td>
-                                
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Quantity)
+                                    @Html.DisplayNameFor(model => model.Price)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Medicine.Name)
+                                    @Html.DisplayNameFor(model => model.StaffId)
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(model => model.CustomerName)
+                                </td>
+                                <td>
+                                    @Html.DisplayNameFor(model => model.Date)
                                 </td>
                                 <td>
                                     @Html.ActionLink("Edit", "Edit", new { id = item.SellId }) |

@@ -17,31 +17,66 @@ namespace E_Medicine_Store.Controllers
         // GET: Attendences
         public ActionResult Index()
         {
-            var attendences = db.Attendences.Include(a => a.Staff);
-            return View();
+            try
+            {
+                List<Attendence> list = db.Attendences.ToList();
+                List<AttendenceViewModel> viewList = new List<AttendenceViewModel>();
+                foreach (Attendence A in list)
+                {
+                    AttendenceViewModel obj = new AttendenceViewModel();
+                    obj.AttendenceID = A.AttendenceID;
+                    obj.Date = A.Date;
+                    obj.Status= A.Status;
+                    obj.StaffID = A.StaffID;
+                    viewList.Add(obj);
+                }
+                return View(viewList);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         // GET: Attendences/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
-            return View();
+            AttendenceViewModel obj = new AttendenceViewModel();
+            Attendence A = db.Attendences.Find(id);
+            if (A == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                obj.AttendenceID = A.AttendenceID;
+                obj.Date = A.Date;
+                obj.Status = A.Status;
+                obj.StaffID = A.StaffID;
+            }
+            return View(obj);
         }
         // GET: Attendences/Create
         public ActionResult Create()
         {
-            ViewBag.StaffID = new SelectList(db.Staffs, "StaffID", "FirstName");
             return View();
         }
 
         // POST: Attendences/Create
        
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(int id, AttendenceViewModel obj)
         {
             try
             {
-                // TODO: Add insert logic here
-
+                Attendence Att = new Attendence();
+                Att.Date = obj.Date;
+                Att.Status = obj.Status.ToString();
+                Att.StaffID = id;
+                db.Attendences.Add(Att);
+                db.SaveChanges();
+                // return RedirectToAction("Index");
+                ViewBag.Message = "Attendence has been Marked ";
                 return RedirectToAction("Index");
             }
             catch
@@ -49,26 +84,40 @@ namespace E_Medicine_Store.Controllers
                 return View();
             }
         }
-
+       
 
 
 
         // GET: Attendences/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
-            return View();
+            AttendenceViewModel obj = new AttendenceViewModel();
+            Attendence A = db.Attendences.Find(id);
+            if (A == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                obj.AttendenceID = A.AttendenceID;
+                obj.Date = A.Date;
+                obj.Status = A.Status;
+                obj.StaffID = A.StaffID;
+            }
+            return View(obj);
         }
 
         // POST: Attendences/Edit/5
         
         [HttpPost]
 
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int? id, AttendenceViewModel obj)
         {
             try
             {
-                // TODO: Add update logic here
-
+                db.Attendences.Find(id).Date = obj.Date;
+                db.Attendences.Find(id).Status = obj.Status;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
@@ -78,23 +127,39 @@ namespace E_Medicine_Store.Controllers
         }
 
         // GET: Attendences/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
-            return View();
+            AttendenceViewModel obj = new AttendenceViewModel();
+            Attendence A = db.Attendences.Find(id);
+            if (A == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                obj.AttendenceID = A.AttendenceID;
+                obj.Date = A.Date;
+                obj.Status = A.Status;
+                obj.StaffID = A.StaffID;
+            }
+            return View(obj);
         }
 
         // POST: Attendences/Delete/5
         [HttpPost, ActionName("Delete")]
 
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int? id, AttendenceViewModel obj)
         {
             try
             {
-                // TODO: Add delete logic here
+                // TODO: Add insert logic here
 
+                var v = db.Attendences.Where(a => a.AttendenceID == id).First();
+                db.Entry(v).State = EntityState.Deleted;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception ex)
             {
                 return View();
             }

@@ -183,7 +183,7 @@ namespace E_Medicine_Store.Controllers
                 var StaffId = (from emp in db.Staffs where emp.Email == model.Email select emp.StaffID).FirstOrDefault();
                 Session["OwnerId"] = result;
                 Session["StaffId"] = StaffId;
-                return RedirectToAction("OwnerProfile", "Home", new { id = result });
+                return RedirectToAction("Create", "Attendences", new { id = result });
 
             }
 

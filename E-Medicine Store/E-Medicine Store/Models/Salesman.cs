@@ -11,8 +11,7 @@ namespace E_Medicine_Store.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations.Schema;
-
+    
     public partial class Salesman
     {
         public int SalesmanID { get; set; }
@@ -21,11 +20,7 @@ namespace E_Medicine_Store.Models
         public string Phone { get; set; }
         public int CompanyID { get; set; }
         public int StockID { get; set; }
-
-        [NotMapped]
-        public List<Comapny> CompanyCollection { get; set; }
-
-
+    
         public virtual Comapny Comapny { get; set; }
         public virtual Stock Stock { get; set; }
     }

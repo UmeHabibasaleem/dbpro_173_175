@@ -21,8 +21,8 @@ namespace E_Medicine_Store.Controllers
                 foreach (Medicine s in list)
                 {
                    MedicineViewModel obj = new MedicineViewModel();
-                    obj.MedID = s.MedID;
-                    obj.Name = s.Name;
+                    obj.MedId = s.MedId;
+                    obj.MedicineName = s.MedicineName;
                     obj.Company= s.Company;
                     obj.Description = s.Description;
                     obj.Measurement = s.Measurement;
@@ -51,8 +51,8 @@ namespace E_Medicine_Store.Controllers
             }
             else
             {
-                obj.MedID= s.MedID;
-                obj.Name = s.Name;
+                obj.MedId= s.MedId;
+                obj.MedicineName = s.MedicineName;
                 obj.Company = s.Company;
                 obj.Description = s.Description;
                 obj.Measurement= s.Measurement;
@@ -91,7 +91,7 @@ namespace E_Medicine_Store.Controllers
             try
             {
                 Medicine s = new Medicine();
-                s.Name = obj.Name;
+                s.MedicineName = obj.MedicineName;
                 s.Company = obj.Company;
                 s.Description = obj.Description;
                 s.Measurement = obj.Measurement;
@@ -119,8 +119,8 @@ namespace E_Medicine_Store.Controllers
             }
             else
             {
-                obj.MedID = s.MedID;
-                obj.Name = s.Name;
+                obj.MedId = s.MedId;
+                obj.MedicineName = s.MedicineName;
                 obj.Company = s.Company;
                 obj.Description = s.Description;
                 obj.Measurement= s.Measurement;
@@ -140,7 +140,7 @@ namespace E_Medicine_Store.Controllers
             try
             {
                 //db.Salesmen.Find(id).SalesmanID = obj.SalesmanID;
-                db.Medicines.Find(id).Name = obj.Name;
+                db.Medicines.Find(id).MedicineName= obj.MedicineName;
                 db.Medicines.Find(id).Company = obj.Company;
                 db.Medicines.Find(id).Description = obj.Description;
                 db.Medicines.Find(id).Measurement = obj.Measurement;
@@ -167,8 +167,8 @@ namespace E_Medicine_Store.Controllers
             }
             else
             {
-                obj.MedID = s.MedID;
-                obj.Name = s.Name;
+                obj.MedId = s.MedId;
+                obj.MedicineName = s.MedicineName;
                 obj.Company = s.Company;
                 obj.Description= s.Description;
                 obj.Measurement = s.Measurement;
@@ -186,7 +186,7 @@ namespace E_Medicine_Store.Controllers
         {
             try
             {
-                var v = db.Medicines.Where(a => a.MedID == id).First();
+                var v = db.Medicines.Where(a => a.MedId == id).First();
                 db.Entry(v).State = EntityState.Deleted;
                 db.SaveChanges();
                 return RedirectToAction("Index");

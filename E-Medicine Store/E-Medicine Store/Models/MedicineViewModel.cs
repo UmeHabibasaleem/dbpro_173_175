@@ -7,8 +7,8 @@ namespace E_Medicine_Store.Models
 {
     public class MedicineViewModel
     {
-        public int MedID { get; set; }
-        public string Name { get; set; }
+        public int MedId { get; set; }
+        public string MedicineName { get; set; }
         public string Company { get; set; }
         public string Description { get; set; }
         public string Measurement { get; set; }
