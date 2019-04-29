@@ -210,6 +210,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MedicineController.cs" />
     <Compile Include="Controllers\SalariesController.cs" />
+    <Compile Include="Controllers\SalaryStatusController.cs" />
     <Compile Include="Controllers\SalesmanController.cs" />
     <Compile Include="Controllers\SellsController.cs" />
     <Compile Include="Controllers\StockController.cs" />
@@ -260,6 +261,7 @@
     <Compile Include="Models\SalaryStatu.cs">
       <DependentUpon>DBModel1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SalaryStatusViewModel.cs" />
     <Compile Include="Models\SalaryViewModel.cs" />
     <Compile Include="Models\Salesman.cs">
       <DependentUpon>DBModel1.tt</DependentUpon>
@@ -423,6 +425,11 @@
     <Content Include="Views\Stock\Delete.cshtml" />
     <Content Include="Views\Staffs\StaffLogin.cshtml" />
     <Content Include="Views\Home\StaffLogin.cshtml" />
+    <Content Include="Views\SalaryStatus\Create.cshtml" />
+    <Content Include="Views\SalaryStatus\Delete.cshtml" />
+    <Content Include="Views\SalaryStatus\Details.cshtml" />
+    <Content Include="Views\SalaryStatus\Edit.cshtml" />
+    <Content Include="Views\SalaryStatus\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
