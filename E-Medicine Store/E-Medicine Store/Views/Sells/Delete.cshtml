@@ -1,4 +1,4 @@
-﻿@model E_Medicine_Store.Models.Sell
+﻿@model E_Medicine_Store.Models.SellsViewModel
 
 @{
     ViewBag.Title = "Delete";
@@ -12,6 +12,27 @@
     <h4>Sell</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MedId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MedId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.StaffId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StaffId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerName)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Date)
         </dt>
@@ -28,21 +49,8 @@
             @Html.DisplayFor(model => model.Price)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Quantity)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Quantity)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Medicine.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Medicine.Name)
-        </dd>
+        
+        
 
     </dl>
 

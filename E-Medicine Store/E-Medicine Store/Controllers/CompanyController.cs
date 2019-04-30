@@ -10,7 +10,7 @@ namespace E_Medicine_Store.Controllers
 {
     public class CompanyController : Controller
     {
-        DB5Entities3 db = new DB5Entities3();
+        DB5Entities5 db = new DB5Entities5();
         // GET: Company
         public ActionResult Index()
         {
@@ -22,7 +22,7 @@ namespace E_Medicine_Store.Controllers
              {
                CompnayViewModel obj = new CompnayViewModel();
                obj.CompanyID = C.CompanyID;
-               obj.Name = C.Name;
+               obj.Name = C.CompanyName;
                obj.CompanyAddress = C.CompanyAddress;
                obj.CompanyType = C.CompanyType;
                viewList.Add(obj);
@@ -47,7 +47,7 @@ namespace E_Medicine_Store.Controllers
             else
             {
                 obj.CompanyID = c.CompanyID;
-                obj.Name = c.Name;
+                obj.Name = c.CompanyName;
                 obj.CompanyAddress = c.CompanyAddress;
                 obj.CompanyType = c.CompanyType;
             }
@@ -69,7 +69,7 @@ namespace E_Medicine_Store.Controllers
                 // TODO: Add insert logic here
 
                 Comapny C1 = new Comapny();
-                C1.Name = obj.Name;
+                C1.CompanyName = obj.Name;
                 C1.CompanyType= obj.CompanyType;
                 C1.CompanyAddress = obj.CompanyAddress;
                 db.Comapnies.Add(C1);
@@ -93,7 +93,7 @@ namespace E_Medicine_Store.Controllers
             }
             else
             {
-                obj.Name = c.Name;
+                obj.Name = c.CompanyName;
                 obj.CompanyAddress = c.CompanyAddress;
                 obj.CompanyType = c.CompanyType;
             }
@@ -106,7 +106,7 @@ namespace E_Medicine_Store.Controllers
         {
             try
             {
-                db.Comapnies.Find(id).Name = obj.Name;
+                db.Comapnies.Find(id).CompanyName = obj.Name;
                 db.Comapnies.Find(id).CompanyAddress = obj.CompanyAddress;
                 db.Comapnies.Find(id).CompanyType = obj.CompanyType;
                 db.SaveChanges();
@@ -130,7 +130,7 @@ namespace E_Medicine_Store.Controllers
             else
             {
                 obj.CompanyID = c.CompanyID;
-                obj.Name = c.Name;
+                obj.Name = c.CompanyName;
                 obj.CompanyAddress = c.CompanyAddress;
                 obj.CompanyType = c.CompanyType;
             }

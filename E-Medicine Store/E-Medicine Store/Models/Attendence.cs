@@ -15,8 +15,8 @@ namespace E_Medicine_Store.Models
     public partial class Attendence
     {
         public int AttendenceID { get; set; }
-        public Nullable<int> StaffID { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
+        public int StaffID { get; set; }
+        public System.DateTime Date { get; set; }
         public string Status { get; set; }
     
         public virtual Staff Staff { get; set; }

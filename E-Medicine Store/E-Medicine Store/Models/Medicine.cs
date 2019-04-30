@@ -20,14 +20,14 @@ namespace E_Medicine_Store.Models
             this.Sells = new HashSet<Sell>();
         }
     
-        public int MedID { get; set; }
-        public string Name { get; set; }
+        public int MedId { get; set; }
+        public string MedicineName { get; set; }
         public string Company { get; set; }
         public string Description { get; set; }
         public string Measurement { get; set; }
         public int Price { get; set; }
-        public Nullable<int> StockID { get; set; }
-        public Nullable<int> CategoryID { get; set; }
+        public int StockID { get; set; }
+        public int CategoryID { get; set; }
     
         public virtual Category Category { get; set; }
         public virtual Stock Stock { get; set; }

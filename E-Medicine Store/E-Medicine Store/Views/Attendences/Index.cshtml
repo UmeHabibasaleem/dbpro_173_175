@@ -1,4 +1,4 @@
-﻿@model IEnumerable<E_Medicine_Store.Models.Attendence>
+﻿@model IEnumerable<E_Medicine_Store.Models.AttendenceViewModel>
 
 @{
     ViewBag.Title = "Index";
@@ -21,7 +21,7 @@
                             @Html.DisplayNameFor(model => model.Status)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.Staff.FirstName)
+                            @Html.DisplayNameFor(model => model.StaffID)
                         </th>
 
                         <th>Action</th>
@@ -41,7 +41,7 @@
                                     @Html.DisplayFor(modelItem => item.Status)                                                    				     
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.Staff.FirstName)
+                                    @Html.DisplayFor(modelItem => item.StaffID)
                                 </td>
                                 <td>
                                     @Html.ActionLink("Edit", "Edit", new { id = item.AttendenceID }) |

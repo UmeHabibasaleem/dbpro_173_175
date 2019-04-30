@@ -12,60 +12,136 @@ namespace E_Medicine_Store.Controllers
 {
     public class SellsController : Controller
     {
-        private DB5Entities3 db = new DB5Entities3();
+        private DB5Entities5 db = new DB5Entities5();
 
         // GET: Sells
         public ActionResult Index()
         {
-            var sells = db.Sells.Include(s => s.Medicine);
-            return View(sells.ToList());
-        }
+            try { 
+            List<Sell> list = db.Sells.ToList();
+            List<SellsViewModel> viewList = new List<SellsViewModel>();
+            foreach (Sell s in list)
+            {
+                SellsViewModel obj = new SellsViewModel();
+                obj.SellId = s.SellId;
+                obj.MedId = s.MedId;
+                obj.Price = s.Price;
+                obj.StaffId = s.StaffId;
+                obj.CustomerName = s.CustomerName;
+                obj.Date = s.Date;
 
-        // GET: Sells/Details/5
-        public ActionResult Details(int id)
+                viewList.Add(obj);
+            }
+            return View(viewList);
+        }
+        
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+}
+
+     // GET: Sells/Details/5
+         public ActionResult Details(int? id)
         {
-            return View();
-        }
+            SellsViewModel obj = new SellsViewModel();
+            Sell s = db.Sells.Find(id);
+            if (s == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                obj.SellId = s.SellId;
+                obj.MedId= s.MedId;
+                obj.Price = s.Price;
+                obj.StaffId = s.StaffId;
+                obj.CustomerName = s.CustomerName;
+                obj.Date = s.Date;
+               
 
+
+            }
+            return View(obj);
+        }
+        [HttpGet]
         // GET: Sells/Create
         public ActionResult Create()
         {
-            ViewBag.MedID = new SelectList(db.Medicines, "MedID", "Name");
-            return View();
+           SellsViewModel sells = new SellsViewModel();
+            using (DB5Entities5 db = new DB5Entities5())
+            {
+
+                sells.MedicineCollection = db.Medicines.ToList<Medicine>();
+                sells.StaffData = db.Staffs.ToList<Staff>();
+
+            }
+
+            return View(sells);
         }
 
         // POST: Sells/Create
         
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(SellsViewModel obj)
         {
             try
             {
-                // TODO: Add insert logic here
-
+                Sell s = new Sell();
+                s.MedId = obj.MedId;
+                s.Price = obj.  Price;
+                s.StaffId = obj.StaffId;
+                s.CustomerName = obj.CustomerName;
+                s.Date = obj.Date;
+                
+                db.Sells.Add(s);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception ex)
             {
                 return View();
             }
         }
 
         // GET: Sells/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
-            return View();
-        }
+            SellsViewModel obj = new SellsViewModel();
+            Sell s = db.Sells.Find(id);
+            if (s == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                obj.SellId = s.SellId;
+                obj.MedId = s.MedId;
+                obj.Price = s.Price;
+                obj.StaffId = s.StaffId;
+                obj.CustomerName = s.CustomerName;
+                obj.Date = s.Date;
+                
+            }
+            return View(obj);
 
+        }
         // POST: Sells/Edit/5
-      
+
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int? id, SellsViewModel obj)
         {
             try
             {
-                // TODO: Add update logic here
-
+                //db.Salesmen.Find(id).SalesmanID = obj.SalesmanID;
+                db.Sells.Find(id).MedId= obj.MedId;
+                db.Sells.Find(id).Price = obj.Price;
+                db.Sells.Find(id).StaffId = obj.StaffId;
+                db.Sells.Find(id).CustomerName = obj.CustomerName;
+                db.Sells.Find(id).Date = obj.Date;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
@@ -74,24 +150,43 @@ namespace E_Medicine_Store.Controllers
             }
         }
 
-
         // GET: Sells/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
-            return View();
+            SellsViewModel obj = new SellsViewModel();
+           Sell s = db.Sells.Find(id);
+            if (s == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                obj.SellId = s.SellId;
+
+                obj.MedId = s.MedId;
+                obj.StaffId = s.StaffId;
+                obj.Price = s.Price;
+
+                obj.CustomerName = s.CustomerName;
+                obj.Date = s.Date;
+                
+            }
+            return View(obj);
+
         }
 
         // POST: Sells/Delete/5
         [HttpPost, ActionName("Delete")]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int? id,SellsViewModel obj)
         {
             try
             {
-                // TODO: Add delete logic here
-
+                var v = db.Sells.Where(a => a.SellId == id).First();
+                db.Entry(v).State = EntityState.Deleted;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception ex)
             {
                 return View();
             }

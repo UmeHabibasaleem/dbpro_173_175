@@ -12,7 +12,7 @@ namespace E_Medicine_Store.Controllers
 {
     public class CategoriesController : Controller
     {
-        private DB5Entities3 db = new DB5Entities3();
+        private DB5Entities5 db = new DB5Entities5();
 
         // GET: Categories
         public ActionResult Index()

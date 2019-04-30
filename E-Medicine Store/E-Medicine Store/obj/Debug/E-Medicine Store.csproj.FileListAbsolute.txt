@@ -240,7 +240,23 @@ C:\Users\Ahmad\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\
 C:\Users\Ahmad\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Ahmad\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Ahmad\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Ahmad\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\obj\Debug\E-Medicine Store.csprojResolveAssemblyReference.cache
 C:\Users\Ahmad\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\obj\Debug\E-Medicine Store.dll
 C:\Users\Ahmad\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\obj\Debug\E-Medicine Store.pdb
 C:\Users\Abubakar\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\obj\Debug\E-Medicine Store.csprojResolveAssemblyReference.cache
+C:\Users\Ahmad\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\Ahmad\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\bin\CrystalDecisions.ReportSource.dll
+C:\Users\Ahmad\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\bin\CrystalDecisions.Shared.dll
+C:\Users\Ahmad\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\Ahmad\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\Ahmad\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\Ahmad\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\Ahmad\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\Ahmad\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\Ahmad\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\Ahmad\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\Ahmad\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\Ahmad\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\Ahmad\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\Ahmad\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\Ahmad\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\bin\stdole.dll
+C:\Users\Ahmad\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\obj\Debug\E-Medicine Store.csprojResolveAssemblyReference.cache

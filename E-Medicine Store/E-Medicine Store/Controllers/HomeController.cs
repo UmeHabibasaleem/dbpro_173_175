@@ -9,7 +9,7 @@ namespace E_Medicine_Store.Controllers
 {
     public class HomeController : Controller
     {
-        DB5Entities3 db = new DB5Entities3();
+        DB5Entities5 db = new DB5Entities5();
         public ActionResult Index()
         {
             return View();
@@ -183,7 +183,7 @@ namespace E_Medicine_Store.Controllers
                 var StaffId = (from emp in db.Staffs where emp.Email == model.Email select emp.StaffID).FirstOrDefault();
                 Session["OwnerId"] = result;
                 Session["StaffId"] = StaffId;
-                return RedirectToAction("OwnerProfile", "Home", new { id = result });
+                return RedirectToAction("Create", "Attendences", new { id = result });
 
             }
 

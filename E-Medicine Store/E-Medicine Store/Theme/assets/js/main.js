@@ -157,8 +157,7 @@
             format:'d.m.Y',
         });
 
-        // // Nice Select
-        $('select').niceSelect();
+      
         
 
         // Google Map

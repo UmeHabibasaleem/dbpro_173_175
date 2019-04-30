@@ -10,7 +10,7 @@ namespace E_Medicine_Store.Controllers
 {
     public class StockController : Controller
     {
-        DB5Entities3 db = new DB5Entities3();
+        DB5Entities5 db = new DB5Entities5();
         // GET: Stock
         public ActionResult Index()
         {

@@ -13,7 +13,7 @@ namespace E_Medicine_Store
 {
     public class StaffsController : Controller
     {
-        DB5Entities3 db = new DB5Entities3();
+        DB5Entities5 db = new DB5Entities5();
         // GET: Staffs
         public ActionResult Index()
         {
@@ -196,8 +196,7 @@ namespace E_Medicine_Store
                 return View();
             }
         }
-
-      
+        
 
     }
 }

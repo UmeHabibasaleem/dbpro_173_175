@@ -21,7 +21,7 @@ namespace E_Medicine_Store.Models
         }
     
         public int CompanyID { get; set; }
-        public string Name { get; set; }
+        public string CompanyName { get; set; }
         public string CompanyAddress { get; set; }
         public string CompanyType { get; set; }
     

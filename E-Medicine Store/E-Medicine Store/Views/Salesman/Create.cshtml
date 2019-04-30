@@ -1,4 +1,4 @@
-﻿@model E_Medicine_Store.Models.Salesman
+﻿@model E_Medicine_Store.Models.SalesmanViewModel
 
 @{
     ViewBag.Title = "Create";
@@ -7,7 +7,7 @@
 
 <h2>Create</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Create", "Salesman" , FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     
@@ -39,11 +39,14 @@
             </div>
         </div>
 
+       
+
         <div class="form-group">
-            @Html.LabelFor(model => model.CompanyID, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model=> model.CompanyID , htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CompanyID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.CompanyID, new SelectList(Model.CompanyCollection , "CompanyID" , "CompanyName") , "Select")
                 @Html.ValidationMessageFor(model => model.CompanyID, "", new { @class = "text-danger" })
+                
             </div>
         </div>
 
@@ -55,6 +58,9 @@
             </div>
         </div>
 
+      
+
+     
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" style="font-size:large"/>

@@ -1,4 +1,4 @@
-﻿@model E_Medicine_Store.Models.Attendence
+﻿@model E_Medicine_Store.Models.AttendenceViewModel
 
 @{
     ViewBag.Title = "Details";
@@ -28,11 +28,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Staff.FirstName)
+            @Html.DisplayNameFor(model => model.StaffID)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Staff.FirstName)
+            @Html.DisplayFor(model => model.StaffID)
         </dd>
 
     </dl>

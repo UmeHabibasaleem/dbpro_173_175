@@ -23,7 +23,7 @@
       <PropertyRef Name="CompanyID" />
     </Key>
     <Property Name="CompanyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
     <Property Name="CompanyAddress" Type="nvarchar(max)" />
     <Property Name="CompanyType" Type="nvarchar" MaxLength="50" />
   </EntityType>
@@ -37,10 +37,10 @@
   </EntityType>
   <EntityType Name="Medicine">
     <Key>
-      <PropertyRef Name="MedID" />
+      <PropertyRef Name="MedId" />
     </Key>
-    <Property Name="MedID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MedId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MedicineName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Company" Type="nvarchar" MaxLength="50" />
     <Property Name="Description" Type="nvarchar" MaxLength="50" />
     <Property Name="Measurement" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -240,7 +240,7 @@
     <End Role="Sells" Type="Self.Sells" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Medicine">
-        <PropertyRef Name="MedID" />
+        <PropertyRef Name="MedId" />
       </Principal>
       <Dependent Role="Sells">
         <PropertyRef Name="MedId" />
