@@ -1,3 +1,3 @@
 # dbpro_173_175
 Project for the DBMS lab
-just to push
+just to pull
