@@ -385,5 +385,43 @@
       <End Role="ShopOwner" EntitySet="ShopOwners" />
       <End Role="Stock" EntitySet="Stocks" />
     </AssociationSet>
+    <FunctionImport Name="abc" ReturnType="Collection(DB5Model.abc_Result)" />
+    <FunctionImport Name="Company" ReturnType="Collection(DB5Model.Company_Result)">
+      <Parameter Name="OwnerId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="CompanyRecord" ReturnType="Collection(DB5Model.CompanyRecord_Result)">
+      <Parameter Name="OwnerId" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
+  <ComplexType Name="abc_Result">
+    <Property Type="Int32" Name="StockID" Nullable="false" />
+    <Property Type="Int32" Name="StockNumber" Nullable="true" />
+    <Property Type="String" Name="Stockitem" Nullable="false" />
+    <Property Type="String" Name="StockType" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="OwnerId" Nullable="false" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyAddress" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Company_Result">
+    <Property Type="Int32" Name="StockID" Nullable="false" />
+    <Property Type="Int32" Name="StockNumber" Nullable="true" />
+    <Property Type="String" Name="Stockitem" Nullable="false" />
+    <Property Type="String" Name="StockType" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="OwnerId" Nullable="false" />
+    <Property Type="Int32" Name="SalesmanID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyAddress" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="CompanyRecord_Result">
+    <Property Type="Int32" Name="StockID" Nullable="false" />
+    <Property Type="Int32" Name="StockNumber" Nullable="true" />
+    <Property Type="String" Name="Stockitem" Nullable="false" />
+    <Property Type="String" Name="StockType" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="OwnerId" Nullable="false" />
+    <Property Type="Int32" Name="SalesmanID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CompanyAddress" Nullable="true" />
+  </ComplexType>
 </Schema>

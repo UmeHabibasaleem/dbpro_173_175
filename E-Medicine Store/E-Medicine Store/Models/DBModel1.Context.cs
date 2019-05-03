@@ -12,6 +12,8 @@ namespace E_Medicine_Store.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class DB5Entities5 : DbContext
     {
@@ -38,5 +40,28 @@ namespace E_Medicine_Store.Models
         public virtual DbSet<Staff> Staffs { get; set; }
         public virtual DbSet<Stock> Stocks { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+    
+        public virtual ObjectResult<abc_Result> abc()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<abc_Result>("abc");
+        }
+    
+        public virtual ObjectResult<Company_Result> Company(Nullable<int> ownerId)
+        {
+            var ownerIdParameter = ownerId.HasValue ?
+                new ObjectParameter("OwnerId", ownerId) :
+                new ObjectParameter("OwnerId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Company_Result>("Company", ownerIdParameter);
+        }
+    
+        public virtual ObjectResult<CompanyRecord_Result> CompanyRecord(Nullable<int> ownerId)
+        {
+            var ownerIdParameter = ownerId.HasValue ?
+                new ObjectParameter("OwnerId", ownerId) :
+                new ObjectParameter("OwnerId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CompanyRecord_Result>("CompanyRecord", ownerIdParameter);
+        }
     }
 }

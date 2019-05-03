@@ -91,7 +91,7 @@ namespace E_Medicine_Store.Controllers
             try
             {
                 Medicine s = new Medicine();
-                s.MedicineName = obj.MedicineName;
+                s.MedicineName= obj.MedicineName;
                 s.Company = obj.Company;
                 s.Description = obj.Description;
                 s.Measurement = obj.Measurement;
