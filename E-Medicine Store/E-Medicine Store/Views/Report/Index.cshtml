@@ -4,109 +4,47 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
- <h2>Reports</h2>
-    <fieldset>
-        
-        @using (Ajax.BeginForm("MYReport", "Report",
-                                    new AjaxOptions { UpdateTargetId = "Report" }))
-        {
-            <div id="Report"></div>
-           
+<h2>Reports</h2>
+<fieldset>
+    @using (Ajax.BeginForm("StaffData", "Report",
+                                                    new AjaxOptions { UpdateTargetId = "Report" }))
+    {
+        <div id="Report"></div>
+
+        <button style="margin-top:20px; margin-bottom:20px">Generate All Records of Staff </button>
+
+    }
+
+   
+
+    @using (Ajax.BeginForm("MYReport", "Report",
+                                            new AjaxOptions { UpdateTargetId = "Report" }))
+    {
+        <div id="Report"></div>
+
             <button style="margin-top:20px; margin-bottom:20px">Generate Company wise stock Report</button>
 
-        }
-        @using (Ajax.BeginForm("Attendence_Per_day", "Report",
-                                new AjaxOptions { UpdateTargetId = "Deatils" }))
-        {
-            <div id="Deatils"></div>
-            <ul>
-                <li>
-                    @Html.Label("Date")
-                    <input type="date" class="form-control" id="date"
-                           name="date"/>
-                   
-                </li>
-               
-            </ul>
-            <button style="margin-bottom:20px">Generate Attendence per day Report</button>
-
-        }
-        @using (Ajax.BeginForm("Attendence_Per_Month", "Report",
-                                    new AjaxOptions { UpdateTargetId = "Deatils2" }))
-        {
-            <div id="Deatils2"></div>
-            <ul>
-                <li>
-                    @Html.Label("Year")
-            
-                    @Html.DropDownList("MyYear", new List<SelectListItem>
-                         {
-                         new SelectListItem{ Text="2000", Value = "2000" },
-                         new SelectListItem{ Text="2001", Value = "2001" },
-                         new SelectListItem{ Text="2002", Value = "2002" },
-                         new SelectListItem{ Text="2003", Value = "2003" },
-                         new SelectListItem{ Text="2004", Value = "2004" },
-                         new SelectListItem{ Text="2005", Value = "2005" },
-                         new SelectListItem{ Text="2006", Value = "2006" },
-                         new SelectListItem{ Text="2007", Value = "2007" },
-                         new SelectListItem{ Text="2008", Value = "2008" },
-                         new SelectListItem{ Text="2009", Value = "2009" },
-                         new SelectListItem{ Text="2010", Value = "2010" },
-                         new SelectListItem{ Text="2011", Value = "2011" },
-                         new SelectListItem{ Text="2012", Value = "2012" },
-                         new SelectListItem{ Text="2013", Value = "2013" },
-                         new SelectListItem{ Text="2014", Value = "2014" },
-                         new SelectListItem{ Text="2015", Value = "2015" },
-                         new SelectListItem{ Text="2016", Value = "2016" },
-                         new SelectListItem{ Text="2017", Value = "2017" },
-                         new SelectListItem{ Text="2018", Value = "2018" },
-                         new SelectListItem{ Text="2019", Value = "2019" },
-                         }, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.Label("Month")
-
-                    @Html.DropDownList("MyMonth", new List<SelectListItem>
-                         {
-                         new SelectListItem{ Text="1", Value = "1" },
-                         new SelectListItem{ Text="2", Value = "2" },
-                         new SelectListItem{ Text="3", Value = "3" },
-                         new SelectListItem{ Text="4", Value = "4" },
-                         new SelectListItem{ Text="5", Value = "5" },
-                         new SelectListItem{ Text="6", Value = "6" },
-                         new SelectListItem{ Text="7", Value = "7" },
-                         new SelectListItem{ Text="8", Value = "8" },
-                         new SelectListItem{ Text="9", Value = "9" },
-                         new SelectListItem{ Text="10", Value = "10" },
-                         new SelectListItem{ Text="11", Value = "11" },
-                         new SelectListItem{ Text="12", Value = "12" },
-                        
-                         }, new { htmlAttributes = new { @class = "form-control" } })
-                   
-                </li>
-               
-            </ul>
-            <button style="margin-bottom:20px">Generate Staff Per Month Attedance Report</button>
-
-        }
-        @using (Ajax.BeginForm("Medicine_sold_per_day", "Report",
-                                    new AjaxOptions { UpdateTargetId = "Deatils" }))
-        {
-            <div id="Deatils"></div>
+    }
+    @using (Ajax.BeginForm("Attendence_Per_day", "Report",
+                                        new AjaxOptions { UpdateTargetId = "Deatils7" }))
+    {
+        <div id="Deatils7"></div>
             <ul>
                 <li>
                     @Html.Label("Date")
                     <input type="date" class="form-control" id="date"
                            name="date" />
-                    
+
                 </li>
 
             </ul>
-            <button style="margin-bottom:20px">Medicine sold per day Report</button>
+            <button style="margin-bottom:20px">Generate Attendence per day Report</button>
 
-        }
-        @using (Ajax.BeginForm("Medicine_sold_per_Month", "Report",
-                                        new AjaxOptions { UpdateTargetId = "Report3" }))
-        {
-            <div id="Report3"></div>
+    }
+    @using (Ajax.BeginForm("Attendence_Per_Month", "Report",
+                                            new AjaxOptions { UpdateTargetId = "Deatils2" }))
+    {
+        <div id="Deatils2"></div>
             <ul>
                 <li>
                     @Html.Label("Year")
@@ -152,13 +90,85 @@
                          new SelectListItem{ Text="12", Value = "12" },
 
                          }, new { htmlAttributes = new { @class = "form-control" } })
-               
+
+                </li>
+
+            </ul>
+            <button style="margin-bottom:20px">Generate Staff Per Month Attedance Report</button>
+
+    }
+    @using (Ajax.BeginForm("Medicine_sold_per_day", "Report",
+                                            new AjaxOptions { UpdateTargetId = "Deatils" }))
+    {
+        <div id="Deatils"></div>
+            <ul>
+                <li>
+                    @Html.Label("Date")
+                    <input type="date" class="form-control" id="date"
+                           name="date" />
+
+                </li>
+
+            </ul>
+            <button style="margin-bottom:20px">Medicine sold per day Report</button>
+
+    }
+    @using (Ajax.BeginForm("Medicine_sold_per_Month", "Report",
+                                                new AjaxOptions { UpdateTargetId = "Report3" }))
+    {
+        <div id="Report3"></div>
+            <ul>
+                <li>
+                    @Html.Label("Year")
+
+                    @Html.DropDownList("MyYear", new List<SelectListItem>
+                         {
+                         new SelectListItem{ Text="2000", Value = "2000" },
+                         new SelectListItem{ Text="2001", Value = "2001" },
+                         new SelectListItem{ Text="2002", Value = "2002" },
+                         new SelectListItem{ Text="2003", Value = "2003" },
+                         new SelectListItem{ Text="2004", Value = "2004" },
+                         new SelectListItem{ Text="2005", Value = "2005" },
+                         new SelectListItem{ Text="2006", Value = "2006" },
+                         new SelectListItem{ Text="2007", Value = "2007" },
+                         new SelectListItem{ Text="2008", Value = "2008" },
+                         new SelectListItem{ Text="2009", Value = "2009" },
+                         new SelectListItem{ Text="2010", Value = "2010" },
+                         new SelectListItem{ Text="2011", Value = "2011" },
+                         new SelectListItem{ Text="2012", Value = "2012" },
+                         new SelectListItem{ Text="2013", Value = "2013" },
+                         new SelectListItem{ Text="2014", Value = "2014" },
+                         new SelectListItem{ Text="2015", Value = "2015" },
+                         new SelectListItem{ Text="2016", Value = "2016" },
+                         new SelectListItem{ Text="2017", Value = "2017" },
+                         new SelectListItem{ Text="2018", Value = "2018" },
+                         new SelectListItem{ Text="2019", Value = "2019" },
+                         }, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.Label("Month")
+
+                    @Html.DropDownList("MyMonth", new List<SelectListItem>
+                         {
+                         new SelectListItem{ Text="1", Value = "1" },
+                         new SelectListItem{ Text="2", Value = "2" },
+                         new SelectListItem{ Text="3", Value = "3" },
+                         new SelectListItem{ Text="4", Value = "4" },
+                         new SelectListItem{ Text="5", Value = "5" },
+                         new SelectListItem{ Text="6", Value = "6" },
+                         new SelectListItem{ Text="7", Value = "7" },
+                         new SelectListItem{ Text="8", Value = "8" },
+                         new SelectListItem{ Text="9", Value = "9" },
+                         new SelectListItem{ Text="10", Value = "10" },
+                         new SelectListItem{ Text="11", Value = "11" },
+                         new SelectListItem{ Text="12", Value = "12" },
+
+                         }, new { htmlAttributes = new { @class = "form-control" } })
+
                 </li>
 
 
             </ul>
-            <button >Medicine sold per month report</button>
+            <button>Medicine sold per month report</button>
 
-        }
- </fieldset>  
+    }
+</fieldset>
 

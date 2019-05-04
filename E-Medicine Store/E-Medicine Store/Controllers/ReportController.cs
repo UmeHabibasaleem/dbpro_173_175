@@ -15,7 +15,7 @@ namespace E_Medicine_Store.Controllers
         {
             return View();
         }
-        public ActionResult MYReport()
+        /*public ActionResult MYReport()
         {
           var id = (int)Session["OwnerId"];
             using (var context = new DB5Entities5())
@@ -85,6 +85,39 @@ namespace E_Medicine_Store.Controllers
                 Stream s = rpt.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
                 return File(s, "application/pdf");
             }
+        }*/
+        public ActionResult StaffData()
+        {
+
+            var Ownerid = (int)Session["OwnerId"];
+            using (var context = new DB5Entities5())
+            {
+                var courses = context.AllStaffs(Ownerid).ToList();
+                StaffRecords rpt = new StaffRecords();
+                rpt.Load();
+                rpt.SetDataSource(courses);
+                Stream s = rpt.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
+                return File(s, "application/pdf");
+
+
+            }
+
         }
+
+       /* public ActionResult StaffPosted()
+        {
+            int Year = Convert.ToInt32(Request["MyYear"].ToString());
+            int Month = Convert.ToInt32(Request["MyMonth"].ToString());
+            var id = (int)Session["OwnerId"];
+            using (var context = new DB5Entities5())
+            {
+                var Att = context.Attendence_Per_Month(Month, Year, id).ToList();
+                AttendancePerMonth rpt = new AttendancePerMonth();
+                rpt.Load();
+                rpt.SetDataSource(Att);
+                Stream s = rpt.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
+                return File(s, "application/pdf");
+            }
+        }*/
     }
 }

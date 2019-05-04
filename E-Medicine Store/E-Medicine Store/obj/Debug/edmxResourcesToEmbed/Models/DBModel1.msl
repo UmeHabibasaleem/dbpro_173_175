@@ -149,20 +149,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="AllStaffs" FunctionName="DB5Model.Store.AllStaffs">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="DB5Model.AllStaffs_Result">
-          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
-          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-          <ScalarProperty Name="LastName" ColumnName="LastName" />
-          <ScalarProperty Name="Join_Date" ColumnName="Join Date" />
-          <ScalarProperty Name="Post" ColumnName="Post" />
-          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
-          <ScalarProperty Name="CNIC" ColumnName="CNIC" />
-          <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-
     <FunctionImportMapping FunctionImportName="abc" FunctionName="DB5Model.Store.abc">
       <ResultMapping>
         <ComplexTypeMapping TypeName="DB5Model.abc_Result">
@@ -203,7 +189,6 @@
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
           <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
-
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

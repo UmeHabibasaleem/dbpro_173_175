@@ -23,7 +23,7 @@ namespace E_Medicine_Store.Controllers
                    MedicineViewModel obj = new MedicineViewModel();
                     obj.MedId = s.MedId;
                     obj.MedicineName = s.MedicineName;
-                    obj.Company= s.Company;
+                   
                     obj.Description = s.Description;
                     obj.Measurement = s.Measurement;
                     obj.Price = s.Price;
@@ -53,7 +53,7 @@ namespace E_Medicine_Store.Controllers
             {
                 obj.MedId= s.MedId;
                 obj.MedicineName = s.MedicineName;
-                obj.Company = s.Company;
+               
                 obj.Description = s.Description;
                 obj.Measurement= s.Measurement;
                 obj.Price = s.Price;
@@ -92,7 +92,7 @@ namespace E_Medicine_Store.Controllers
             {
                 Medicine s = new Medicine();
                 s.MedicineName= obj.MedicineName;
-                s.Company = obj.Company;
+               
                 s.Description = obj.Description;
                 s.Measurement = obj.Measurement;
                 s.Price = obj.Price;
@@ -121,7 +121,7 @@ namespace E_Medicine_Store.Controllers
             {
                 obj.MedId = s.MedId;
                 obj.MedicineName = s.MedicineName;
-                obj.Company = s.Company;
+                
                 obj.Description = s.Description;
                 obj.Measurement= s.Measurement;
                 obj.Price = s.Price;
@@ -141,7 +141,7 @@ namespace E_Medicine_Store.Controllers
             {
                 //db.Salesmen.Find(id).SalesmanID = obj.SalesmanID;
                 db.Medicines.Find(id).MedicineName= obj.MedicineName;
-                db.Medicines.Find(id).Company = obj.Company;
+                
                 db.Medicines.Find(id).Description = obj.Description;
                 db.Medicines.Find(id).Measurement = obj.Measurement;
                 db.Medicines.Find(id).Price = obj.Price;
@@ -169,7 +169,7 @@ namespace E_Medicine_Store.Controllers
             {
                 obj.MedId = s.MedId;
                 obj.MedicineName = s.MedicineName;
-                obj.Company = s.Company;
+                
                 obj.Description= s.Description;
                 obj.Measurement = s.Measurement;
                 obj.Price = s.Price;

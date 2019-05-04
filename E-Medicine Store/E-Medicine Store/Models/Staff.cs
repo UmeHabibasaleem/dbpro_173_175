@@ -25,9 +25,9 @@ namespace E_Medicine_Store.Models
         public int StaffID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public Nullable<System.DateTime> Join_Date { get; set; }
+        public System.DateTime Join_Date { get; set; }
         public string Post { get; set; }
-        public Nullable<System.DateTime> DateOfBirth { get; set; }
+        public System.DateTime DateOfBirth { get; set; }
         public string CNIC { get; set; }
         public int OwnerId { get; set; }
         public string Email { get; set; }

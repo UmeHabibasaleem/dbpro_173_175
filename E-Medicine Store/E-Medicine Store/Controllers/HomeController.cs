@@ -199,7 +199,7 @@ namespace E_Medicine_Store.Controllers
 
             }
         }
-        public ActionResult MYReport()
+       /* public ActionResult MYReport()
         {
 
 
@@ -213,7 +213,7 @@ namespace E_Medicine_Store.Controllers
                 Stream s = rpt.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
                 return File(s, "application/pdf");
             }
-        }
+        }*/
 
     }
 }

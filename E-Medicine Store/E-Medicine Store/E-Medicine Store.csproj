@@ -209,6 +209,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AllReportsController.cs" />
     <Compile Include="Controllers\AttendencesController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\CompanyController.cs" />
@@ -220,128 +221,128 @@
     <Compile Include="Controllers\SalaryStatusController.cs" />
     <Compile Include="Controllers\SalesmanController.cs" />
     <Compile Include="Controllers\SellsController.cs" />
-    <Compile Include="Controllers\StaffReportController.cs" />
     <Compile Include="Controllers\StockController.cs" />
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\abc_Result.cs">
-      <DependentUpon>DBModel1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AllStaffs_Result.cs">
-      <DependentUpon>DBModel1.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Attendence.cs">
-      <DependentUpon>DBModel1.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AttendenceViewModel.cs" />
-    <Compile Include="Models\Attendence_Per_day_Result.cs">
-      <DependentUpon>DBModel1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Attendence_Per_Month_Result.cs">
-      <DependentUpon>DBModel1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Category.cs">
-      <DependentUpon>DBModel1.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CategoryViewModel.cs" />
+    <Compile Include="Models\CategoryWiseMedicine_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Comapny.cs">
-      <DependentUpon>DBModel1.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CompanyRecord_Result.cs">
-      <DependentUpon>DBModel1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Company_Result.cs">
-      <DependentUpon>DBModel1.tt</DependentUpon>
+    <Compile Include="Models\CompanyWiseStock_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CompnayViewModel.cs" />
-    <Compile Include="Models\DBModel1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBModel1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DBModel1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBModel1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DBModel1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBModel1.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MedicalStore.cs">
-      <DependentUpon>DBModel1.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Medicine.cs">
-      <DependentUpon>DBModel1.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MedicineViewModel.cs" />
-    <Compile Include="Models\Medicine_sold_per_DAy_Result.cs">
-      <DependentUpon>DBModel1.tt</DependentUpon>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Medicine_sold_per_Month_Result.cs">
-      <DependentUpon>DBModel1.tt</DependentUpon>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MonthlySalaryReport_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PostedStaffs_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Registration.cs" />
     <Compile Include="Models\ReportClass.cs" />
-    <Compile Include="Models\ReportController.cs" />
     <Compile Include="Models\Salary.cs">
-      <DependentUpon>DBModel1.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SalaryStatu.cs">
-      <DependentUpon>DBModel1.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SalaryStatusViewModel.cs" />
     <Compile Include="Models\SalaryViewModel.cs" />
     <Compile Include="Models\Salesman.cs">
-      <DependentUpon>DBModel1.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SalesmanViewModel.cs" />
     <Compile Include="Models\Sell.cs">
-      <DependentUpon>DBModel1.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SellsViewModel.cs" />
     <Compile Include="Models\ShopOwner.cs">
-      <DependentUpon>DBModel1.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Staff.cs">
-      <DependentUpon>DBModel1.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\StaffViewModel.cs" />
     <Compile Include="Models\Stock.cs">
-      <DependentUpon>DBModel1.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\StockViewModel.cs" />
     <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>DBModel1.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PostWiseStaffReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostWiseStaffReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\StaffsController.cs" />
-
-    <Compile Include="StaffData.Designer.cs">
+    <Compile Include="rptCompanyList.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>StaffData.xsd</DependentUpon>
+      <DependentUpon>rptCompanyList.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="StaffRecords.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StaffRecords.rpt</DependentUpon>
-
-    <Compile Include="rptCompanyList.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rptCompanyList.rpt</DependentUpon>
-
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Startup.cs" />
@@ -354,15 +355,15 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Image\Final.png" />
-    <Content Include="Models\DBModel1.Context.tt">
+    <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBModel1.edmx</DependentUpon>
-      <LastGenOutput>DBModel1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\DBModel1.tt">
+    <Content Include="Models\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBModel1.edmx</DependentUpon>
-      <LastGenOutput>DBModel1.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
@@ -370,13 +371,6 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <EntityDeploy Include="Models\DBModel1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DBModel1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\DBModel1.edmx.diagram">
-      <DependentUpon>DBModel1.edmx</DependentUpon>
     </Content>
     <Content Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
@@ -388,6 +382,24 @@
     </None>
     <Content Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSet2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -500,22 +512,7 @@
     <Content Include="Views\SalaryStatus\Details.cshtml" />
     <Content Include="Views\SalaryStatus\Edit.cshtml" />
     <Content Include="Views\SalaryStatus\Index.cshtml" />
-
-    <Content Include="StaffData.xsc">
-      <DependentUpon>StaffData.xsd</DependentUpon>
-    </Content>
-    <None Include="StaffData.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>StaffData.Designer.cs</LastGenOutput>
-    </None>
-    <Content Include="StaffData.xss">
-      <DependentUpon>StaffData.xsd</DependentUpon>
-    </Content>
-    <Content Include="Views\StaffReport\Index.cshtml" />
-
     <Content Include="Views\Report\Index.cshtml" />
-
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -523,6 +520,7 @@
     <Folder Include="Theme\assets\fonts\" />
     <Folder Include="Theme\assets\images\" />
     <Folder Include="Theme\assets\sass\" />
+    <Folder Include="Views\AllReports\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -541,19 +539,21 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-
-    <EmbeddedResource Include="StaffRecords.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>StaffRecords.cs</LastGenOutput>
-
     <EmbeddedResource Include="CompanyRecordrpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CompanyRecordrpt.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="PostWiseStaffReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PostWiseStaffReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptCompanyList.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptCompanyList.cs</LastGenOutput>
-
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffRecords.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StaffRecords.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -63,18 +63,13 @@ namespace E_Medicine_Store.Controllers
         public ActionResult Create()
         {
             SalaryStatusViewModel salary = new SalaryStatusViewModel();
-            var id = (int)Session["OwnerId"];
-            salary.SalaryCollection = db.Salaries.ToList<Salary>();
-            List<Staff> list = db.Staffs.ToList();
-            List<Staff> list2 = new List<Staff>();
-            foreach (Staff s in list)
+            using (DB5Entities5 db = new DB5Entities5())
             {
-                if (s.OwnerId == id)
-                {
-                    list2.Add(s);
-                }
+
+                salary.SalaryCollection = db.Salaries.ToList<Salary>();
+                salary.StaffCollection = db.Staffs.ToList<Staff>();
             }
-            salary.StaffCollection = list2;
+
             return View(salary);
         }
 
