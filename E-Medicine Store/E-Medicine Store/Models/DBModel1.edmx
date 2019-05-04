@@ -304,6 +304,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+
+        <Function Name="AllStaffs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+
         <Function Name="abc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Attendence_Per_day" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="date" Type="datetime" Mode="In" />
@@ -318,6 +321,7 @@
           <Parameter Name="OwnerId" Type="int" Mode="In" />
         </Function>
         <Function Name="CompanyRecord" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+
           <Parameter Name="OwnerId" Type="int" Mode="In" />
         </Function>
         <Function Name="Medicine_sold_per_DAy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -781,6 +785,23 @@
             <End Role="ShopOwner" EntitySet="ShopOwners" />
             <End Role="Stock" EntitySet="Stocks" />
           </AssociationSet>
+
+          <FunctionImport Name="AllStaffs" ReturnType="Collection(DB5Model.AllStaffs_Result)">
+          <Parameter Name="OwnerId" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="AllStaffs_Result">
+          <Property Type="Int32" Name="StaffID" Nullable="false" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="Join_Date" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Post" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="DateOfBirth" Nullable="true" Precision="23" />
+          <Property Type="String" Name="CNIC" Nullable="false" MaxLength="13" />
+          <Property Type="Int32" Name="OwnerId" Nullable="false" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+
           <FunctionImport Name="abc" ReturnType="Collection(DB5Model.abc_Result)" />
           <FunctionImport Name="Company" ReturnType="Collection(DB5Model.Company_Result)">
           <Parameter Name="OwnerId" Mode="In" Type="Int32" />
@@ -837,6 +858,7 @@
           <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="CompanyAddress" Nullable="true" />
+
         </ComplexType>
         <ComplexType Name="Attendence_Per_day_Result">
           <Property Type="Int32" Name="StaffID" Nullable="false" />
@@ -1016,6 +1038,21 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+
+          <FunctionImportMapping FunctionImportName="AllStaffs" FunctionName="DB5Model.Store.AllStaffs">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB5Model.AllStaffs_Result">
+                <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Join_Date" ColumnName="Join Date" />
+                <ScalarProperty Name="Post" ColumnName="Post" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+                <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+
           <FunctionImportMapping FunctionImportName="abc" FunctionName="DB5Model.Store.abc">
             <ResultMapping>
               <ComplexTypeMapping TypeName="DB5Model.abc_Result">
@@ -1056,6 +1093,7 @@
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
                 <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
+
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

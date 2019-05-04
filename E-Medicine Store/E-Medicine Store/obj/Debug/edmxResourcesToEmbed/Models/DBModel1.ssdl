@@ -299,6 +299,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+
+  <Function Name="AllStaffs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+
   <Function Name="abc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="Attendence_Per_day" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="date" Type="datetime" Mode="In" />
@@ -313,6 +316,7 @@
     <Parameter Name="OwnerId" Type="int" Mode="In" />
   </Function>
   <Function Name="CompanyRecord" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+
     <Parameter Name="OwnerId" Type="int" Mode="In" />
   </Function>
   <Function Name="Medicine_sold_per_DAy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">

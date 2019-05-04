@@ -41,6 +41,9 @@ namespace E_Medicine_Store.Models
         public virtual DbSet<Stock> Stocks { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     
+
+        public virtual ObjectResult<AllStaffs_Result> AllStaffs(Nullable<int> ownerId)
+
         public virtual ObjectResult<abc_Result> abc()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<abc_Result>("abc");
@@ -56,12 +59,17 @@ namespace E_Medicine_Store.Models
         }
     
         public virtual ObjectResult<CompanyRecord_Result> CompanyRecord(Nullable<int> ownerId)
+
         {
             var ownerIdParameter = ownerId.HasValue ?
                 new ObjectParameter("OwnerId", ownerId) :
                 new ObjectParameter("OwnerId", typeof(int));
     
+
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AllStaffs_Result>("AllStaffs", ownerIdParameter);
+
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CompanyRecord_Result>("CompanyRecord", ownerIdParameter);
+
         }
     
         public virtual ObjectResult<Attendence_Per_day_Result> Attendence_Per_day(Nullable<System.DateTime> date, Nullable<int> ownerId)
