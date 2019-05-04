@@ -162,6 +162,48 @@
           <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Password" ColumnName="Password" />
+
+    <FunctionImportMapping FunctionImportName="abc" FunctionName="DB5Model.Store.abc">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB5Model.abc_Result">
+          <ScalarProperty Name="StockID" ColumnName="StockID" />
+          <ScalarProperty Name="StockNumber" ColumnName="StockNumber" />
+          <ScalarProperty Name="Stockitem" ColumnName="Stockitem" />
+          <ScalarProperty Name="StockType" ColumnName="StockType" />
+          <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Company" FunctionName="DB5Model.Store.Company">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB5Model.Company_Result">
+          <ScalarProperty Name="StockID" ColumnName="StockID" />
+          <ScalarProperty Name="StockNumber" ColumnName="StockNumber" />
+          <ScalarProperty Name="Stockitem" ColumnName="Stockitem" />
+          <ScalarProperty Name="StockType" ColumnName="StockType" />
+          <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+          <ScalarProperty Name="SalesmanID" ColumnName="SalesmanID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CompanyRecord" FunctionName="DB5Model.Store.CompanyRecord">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB5Model.CompanyRecord_Result">
+          <ScalarProperty Name="StockID" ColumnName="StockID" />
+          <ScalarProperty Name="StockNumber" ColumnName="StockNumber" />
+          <ScalarProperty Name="Stockitem" ColumnName="Stockitem" />
+          <ScalarProperty Name="StockType" ColumnName="StockType" />
+          <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+          <ScalarProperty Name="SalesmanID" ColumnName="SalesmanID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
+
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

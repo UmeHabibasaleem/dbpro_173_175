@@ -14,6 +14,7 @@ namespace E_Medicine_Store.Models
             public string Name { get; set; }
             [Required]
             [Display(Name = "CNIC")]
+            [StringLength(10, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 10)]
             public string CNIC { get; set; }
             [Required]
             [EmailAddress]

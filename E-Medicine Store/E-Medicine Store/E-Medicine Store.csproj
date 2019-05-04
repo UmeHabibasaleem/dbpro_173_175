@@ -202,6 +202,12 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="CompanyRecordrpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CompanyRecordrpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AttendencesController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
@@ -215,8 +221,16 @@
     <Compile Include="Controllers\SellsController.cs" />
     <Compile Include="Controllers\StaffReportController.cs" />
     <Compile Include="Controllers\StockController.cs" />
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\abc_Result.cs">
+      <DependentUpon>DBModel1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AllStaffs_Result.cs">
@@ -231,6 +245,12 @@
     </Compile>
     <Compile Include="Models\CategoryViewModel.cs" />
     <Compile Include="Models\Comapny.cs">
+      <DependentUpon>DBModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CompanyRecord_Result.cs">
+      <DependentUpon>DBModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Company_Result.cs">
       <DependentUpon>DBModel1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CompnayViewModel.cs" />
@@ -259,6 +279,7 @@
     </Compile>
     <Compile Include="Models\MedicineViewModel.cs" />
     <Compile Include="Models\Registration.cs" />
+    <Compile Include="Models\ReportController.cs" />
     <Compile Include="Models\Salary.cs">
       <DependentUpon>DBModel1.tt</DependentUpon>
     </Compile>
@@ -291,6 +312,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\StaffsController.cs" />
+
     <Compile Include="StaffData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -300,6 +322,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StaffRecords.rpt</DependentUpon>
+
+    <Compile Include="rptCompanyList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCompanyList.rpt</DependentUpon>
+
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Startup.cs" />
@@ -336,6 +364,17 @@
     <Content Include="Models\DBModel1.edmx.diagram">
       <DependentUpon>DBModel1.edmx</DependentUpon>
     </Content>
+    <Content Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -354,7 +393,9 @@
     <Content Include="Theme\Pharmasicts.html" />
     <Content Include="Theme\index.html" />
     <Content Include="Views\Shared\Final.png" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -445,6 +486,7 @@
     <Content Include="Views\SalaryStatus\Details.cshtml" />
     <Content Include="Views\SalaryStatus\Edit.cshtml" />
     <Content Include="Views\SalaryStatus\Index.cshtml" />
+
     <Content Include="StaffData.xsc">
       <DependentUpon>StaffData.xsd</DependentUpon>
     </Content>
@@ -457,6 +499,9 @@
       <DependentUpon>StaffData.xsd</DependentUpon>
     </Content>
     <Content Include="Views\StaffReport\Index.cshtml" />
+
+    <Content Include="Views\Report\Index.cshtml" />
+
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -482,9 +527,19 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+
     <EmbeddedResource Include="StaffRecords.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>StaffRecords.cs</LastGenOutput>
+
+    <EmbeddedResource Include="CompanyRecordrpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CompanyRecordrpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptCompanyList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCompanyList.cs</LastGenOutput>
+
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

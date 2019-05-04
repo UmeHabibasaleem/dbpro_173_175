@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using E_Medicine_Store.Models;
+using System.Data.Entity;
+using System.IO;
 
 namespace E_Medicine_Store.Controllers
 {
@@ -195,6 +197,21 @@ namespace E_Medicine_Store.Controllers
 
                 return View();
 
+            }
+        }
+        public ActionResult MYReport()
+        {
+
+
+
+            using (var context = new DB5Entities5())
+            {
+                var courses = context.CompanyRecord(4).ToList();
+                CompanyRecordrpt rpt = new CompanyRecordrpt();
+                rpt.Load();
+                rpt.SetDataSource(courses);
+                Stream s = rpt.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
+                return File(s, "application/pdf");
             }
         }
 

@@ -304,7 +304,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+
         <Function Name="AllStaffs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+
+        <Function Name="abc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Company" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="OwnerId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CompanyRecord" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+
           <Parameter Name="OwnerId" Type="int" Mode="In" />
         </Function>
         <EntityContainer Name="DB5ModelStoreContainer">
@@ -759,6 +767,7 @@
             <End Role="ShopOwner" EntitySet="ShopOwners" />
             <End Role="Stock" EntitySet="Stocks" />
           </AssociationSet>
+
           <FunctionImport Name="AllStaffs" ReturnType="Collection(DB5Model.AllStaffs_Result)">
           <Parameter Name="OwnerId" Mode="In" Type="Int32" />
           </FunctionImport>
@@ -774,6 +783,46 @@
           <Property Type="Int32" Name="OwnerId" Nullable="false" />
           <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+
+          <FunctionImport Name="abc" ReturnType="Collection(DB5Model.abc_Result)" />
+          <FunctionImport Name="Company" ReturnType="Collection(DB5Model.Company_Result)">
+          <Parameter Name="OwnerId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CompanyRecord" ReturnType="Collection(DB5Model.CompanyRecord_Result)">
+          <Parameter Name="OwnerId" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="abc_Result">
+          <Property Type="Int32" Name="StockID" Nullable="false" />
+          <Property Type="Int32" Name="StockNumber" Nullable="true" />
+          <Property Type="String" Name="Stockitem" Nullable="false" />
+          <Property Type="String" Name="StockType" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="OwnerId" Nullable="false" />
+          <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CompanyAddress" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Company_Result">
+          <Property Type="Int32" Name="StockID" Nullable="false" />
+          <Property Type="Int32" Name="StockNumber" Nullable="true" />
+          <Property Type="String" Name="Stockitem" Nullable="false" />
+          <Property Type="String" Name="StockType" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="OwnerId" Nullable="false" />
+          <Property Type="Int32" Name="SalesmanID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CompanyAddress" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="CompanyRecord_Result">
+          <Property Type="Int32" Name="StockID" Nullable="false" />
+          <Property Type="Int32" Name="StockNumber" Nullable="true" />
+          <Property Type="String" Name="Stockitem" Nullable="false" />
+          <Property Type="String" Name="StockType" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="OwnerId" Nullable="false" />
+          <Property Type="Int32" Name="SalesmanID" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CompanyAddress" Nullable="true" />
+
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -929,6 +978,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+
           <FunctionImportMapping FunctionImportName="AllStaffs" FunctionName="DB5Model.Store.AllStaffs">
             <ResultMapping>
               <ComplexTypeMapping TypeName="DB5Model.AllStaffs_Result">
@@ -942,6 +992,48 @@
                 <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
+
+          <FunctionImportMapping FunctionImportName="abc" FunctionName="DB5Model.Store.abc">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB5Model.abc_Result">
+                <ScalarProperty Name="StockID" ColumnName="StockID" />
+                <ScalarProperty Name="StockNumber" ColumnName="StockNumber" />
+                <ScalarProperty Name="Stockitem" ColumnName="Stockitem" />
+                <ScalarProperty Name="StockType" ColumnName="StockType" />
+                <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Company" FunctionName="DB5Model.Store.Company">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB5Model.Company_Result">
+                <ScalarProperty Name="StockID" ColumnName="StockID" />
+                <ScalarProperty Name="StockNumber" ColumnName="StockNumber" />
+                <ScalarProperty Name="Stockitem" ColumnName="Stockitem" />
+                <ScalarProperty Name="StockType" ColumnName="StockType" />
+                <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+                <ScalarProperty Name="SalesmanID" ColumnName="SalesmanID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CompanyRecord" FunctionName="DB5Model.Store.CompanyRecord">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DB5Model.CompanyRecord_Result">
+                <ScalarProperty Name="StockID" ColumnName="StockID" />
+                <ScalarProperty Name="StockNumber" ColumnName="StockNumber" />
+                <ScalarProperty Name="Stockitem" ColumnName="Stockitem" />
+                <ScalarProperty Name="StockType" ColumnName="StockType" />
+                <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+                <ScalarProperty Name="SalesmanID" ColumnName="SalesmanID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
+
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

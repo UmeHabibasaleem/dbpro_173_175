@@ -299,7 +299,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+
   <Function Name="AllStaffs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+
+  <Function Name="abc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Company" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OwnerId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CompanyRecord" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+
     <Parameter Name="OwnerId" Type="int" Mode="In" />
   </Function>
   <EntityContainer Name="DB5ModelStoreContainer">
