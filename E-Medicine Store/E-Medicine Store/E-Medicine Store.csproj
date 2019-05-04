@@ -213,11 +213,15 @@
     <Compile Include="Controllers\SalaryStatusController.cs" />
     <Compile Include="Controllers\SalesmanController.cs" />
     <Compile Include="Controllers\SellsController.cs" />
+    <Compile Include="Controllers\StaffReportController.cs" />
     <Compile Include="Controllers\StockController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AllStaffs_Result.cs">
+      <DependentUpon>DBModel1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Attendence.cs">
       <DependentUpon>DBModel1.tt</DependentUpon>
     </Compile>
@@ -287,6 +291,17 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\StaffsController.cs" />
+    <Compile Include="StaffData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StaffData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StaffRecords.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StaffRecords.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -430,6 +445,18 @@
     <Content Include="Views\SalaryStatus\Details.cshtml" />
     <Content Include="Views\SalaryStatus\Edit.cshtml" />
     <Content Include="Views\SalaryStatus\Index.cshtml" />
+    <Content Include="StaffData.xsc">
+      <DependentUpon>StaffData.xsd</DependentUpon>
+    </Content>
+    <None Include="StaffData.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StaffData.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="StaffData.xss">
+      <DependentUpon>StaffData.xsd</DependentUpon>
+    </Content>
+    <Content Include="Views\StaffReport\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -453,6 +480,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="StaffRecords.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StaffRecords.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
