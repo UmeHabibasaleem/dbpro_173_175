@@ -14,7 +14,7 @@ namespace E_Medicine_Store.Models
     public partial class CompanyRecord_Result
     {
         public int StockID { get; set; }
-        public int StockNumber { get; set; }
+        public Nullable<int> StockNumber { get; set; }
         public string Stockitem { get; set; }
         public string StockType { get; set; }
         public int OwnerId { get; set; }

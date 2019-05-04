@@ -26,8 +26,8 @@ namespace E_Medicine_Store.Models
         public string Description { get; set; }
         public string Measurement { get; set; }
         public int Price { get; set; }
-        public int StockID { get; set; }
-        public int CategoryID { get; set; }
+        public Nullable<int> StockID { get; set; }
+        public Nullable<int> CategoryID { get; set; }
     
         public virtual Category Category { get; set; }
         public virtual Stock Stock { get; set; }

@@ -22,7 +22,7 @@ namespace E_Medicine_Store.Models
         }
     
         public int StockID { get; set; }
-        public int StockNumber { get; set; }
+        public Nullable<int> StockNumber { get; set; }
         public string Stockitem { get; set; }
         public string Description { get; set; }
         public string StockType { get; set; }

@@ -192,5 +192,45 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Attendence_Per_day" FunctionName="DB5Model.Store.Attendence_Per_day">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB5Model.Attendence_Per_day_Result">
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="Staff_Name" ColumnName="Staff_Name" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Attendence_Per_Month" FunctionName="DB5Model.Store.Attendence_Per_Month">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB5Model.Attendence_Per_Month_Result">
+          <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+          <ScalarProperty Name="Staff_Name" ColumnName="Staff_Name" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Medicine_sold_per_DAy" FunctionName="DB5Model.Store.Medicine_sold_per_DAy">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB5Model.Medicine_sold_per_DAy_Result">
+          <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+          <ScalarProperty Name="MedicineName" ColumnName="MedicineName" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Medicine_sold_per_Month" FunctionName="DB5Model.Store.Medicine_sold_per_Month">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB5Model.Medicine_sold_per_Month_Result">
+          <ScalarProperty Name="OwnerId" ColumnName="OwnerId" />
+          <ScalarProperty Name="MedicineName" ColumnName="MedicineName" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

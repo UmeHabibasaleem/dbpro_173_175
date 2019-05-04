@@ -392,6 +392,24 @@
     <FunctionImport Name="CompanyRecord" ReturnType="Collection(DB5Model.CompanyRecord_Result)">
       <Parameter Name="OwnerId" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="Attendence_Per_day" ReturnType="Collection(DB5Model.Attendence_Per_day_Result)">
+      <Parameter Name="date" Mode="In" Type="DateTime" />
+      <Parameter Name="OwnerId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Attendence_Per_Month" ReturnType="Collection(DB5Model.Attendence_Per_Month_Result)">
+      <Parameter Name="month" Mode="In" Type="Int32" />
+      <Parameter Name="year" Mode="In" Type="Int32" />
+      <Parameter Name="OwnerId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Medicine_sold_per_DAy" ReturnType="Collection(DB5Model.Medicine_sold_per_DAy_Result)">
+      <Parameter Name="Date" Mode="In" Type="DateTime" />
+      <Parameter Name="Ownerid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Medicine_sold_per_Month" ReturnType="Collection(DB5Model.Medicine_sold_per_Month_Result)">
+      <Parameter Name="Year" Mode="In" Type="Int32" />
+      <Parameter Name="month" Mode="In" Type="Int32" />
+      <Parameter Name="Ownerid" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="abc_Result">
     <Property Type="Int32" Name="StockID" Nullable="false" />
@@ -423,5 +441,29 @@
     <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
     <Property Type="String" Name="CompanyAddress" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Attendence_Per_day_Result">
+    <Property Type="Int32" Name="StaffID" Nullable="false" />
+    <Property Type="String" Name="Staff_Name" Nullable="true" MaxLength="101" />
+    <Property Type="DateTime" Name="Date" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="Attendence_Per_Month_Result">
+    <Property Type="Int32" Name="StaffID" Nullable="false" />
+    <Property Type="String" Name="Staff_Name" Nullable="true" MaxLength="101" />
+    <Property Type="DateTime" Name="Date" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="Medicine_sold_per_DAy_Result">
+    <Property Type="Int32" Name="OwnerId" Nullable="false" />
+    <Property Type="String" Name="MedicineName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="CustomerName" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Price" Nullable="false" />
+    <Property Type="DateTime" Name="Date" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="Medicine_sold_per_Month_Result">
+    <Property Type="Int32" Name="OwnerId" Nullable="false" />
+    <Property Type="String" Name="MedicineName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="CustomerName" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Price" Nullable="false" />
+    <Property Type="DateTime" Name="Date" Nullable="false" Precision="23" />
   </ComplexType>
 </Schema>

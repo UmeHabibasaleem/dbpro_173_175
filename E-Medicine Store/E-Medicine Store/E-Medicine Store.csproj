@@ -215,6 +215,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MedicineController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\SalariesController.cs" />
     <Compile Include="Controllers\SalaryStatusController.cs" />
     <Compile Include="Controllers\SalesmanController.cs" />
@@ -236,6 +237,12 @@
       <DependentUpon>DBModel1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AttendenceViewModel.cs" />
+    <Compile Include="Models\Attendence_Per_day_Result.cs">
+      <DependentUpon>DBModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Attendence_Per_Month_Result.cs">
+      <DependentUpon>DBModel1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Category.cs">
       <DependentUpon>DBModel1.tt</DependentUpon>
     </Compile>
@@ -274,7 +281,14 @@
       <DependentUpon>DBModel1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MedicineViewModel.cs" />
+    <Compile Include="Models\Medicine_sold_per_DAy_Result.cs">
+      <DependentUpon>DBModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Medicine_sold_per_Month_Result.cs">
+      <DependentUpon>DBModel1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Registration.cs" />
+    <Compile Include="Models\ReportClass.cs" />
     <Compile Include="Models\ReportController.cs" />
     <Compile Include="Models\Salary.cs">
       <DependentUpon>DBModel1.tt</DependentUpon>

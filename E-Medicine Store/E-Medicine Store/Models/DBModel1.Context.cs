@@ -63,5 +63,65 @@ namespace E_Medicine_Store.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CompanyRecord_Result>("CompanyRecord", ownerIdParameter);
         }
+    
+        public virtual ObjectResult<Attendence_Per_day_Result> Attendence_Per_day(Nullable<System.DateTime> date, Nullable<int> ownerId)
+        {
+            var dateParameter = date.HasValue ?
+                new ObjectParameter("date", date) :
+                new ObjectParameter("date", typeof(System.DateTime));
+    
+            var ownerIdParameter = ownerId.HasValue ?
+                new ObjectParameter("OwnerId", ownerId) :
+                new ObjectParameter("OwnerId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Attendence_Per_day_Result>("Attendence_Per_day", dateParameter, ownerIdParameter);
+        }
+    
+        public virtual ObjectResult<Attendence_Per_Month_Result> Attendence_Per_Month(Nullable<int> month, Nullable<int> year, Nullable<int> ownerId)
+        {
+            var monthParameter = month.HasValue ?
+                new ObjectParameter("month", month) :
+                new ObjectParameter("month", typeof(int));
+    
+            var yearParameter = year.HasValue ?
+                new ObjectParameter("year", year) :
+                new ObjectParameter("year", typeof(int));
+    
+            var ownerIdParameter = ownerId.HasValue ?
+                new ObjectParameter("OwnerId", ownerId) :
+                new ObjectParameter("OwnerId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Attendence_Per_Month_Result>("Attendence_Per_Month", monthParameter, yearParameter, ownerIdParameter);
+        }
+    
+        public virtual ObjectResult<Medicine_sold_per_DAy_Result> Medicine_sold_per_DAy(Nullable<System.DateTime> date, Nullable<int> ownerid)
+        {
+            var dateParameter = date.HasValue ?
+                new ObjectParameter("Date", date) :
+                new ObjectParameter("Date", typeof(System.DateTime));
+    
+            var owneridParameter = ownerid.HasValue ?
+                new ObjectParameter("Ownerid", ownerid) :
+                new ObjectParameter("Ownerid", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Medicine_sold_per_DAy_Result>("Medicine_sold_per_DAy", dateParameter, owneridParameter);
+        }
+    
+        public virtual ObjectResult<Medicine_sold_per_Month_Result> Medicine_sold_per_Month(Nullable<int> year, Nullable<int> month, Nullable<int> ownerid)
+        {
+            var yearParameter = year.HasValue ?
+                new ObjectParameter("Year", year) :
+                new ObjectParameter("Year", typeof(int));
+    
+            var monthParameter = month.HasValue ?
+                new ObjectParameter("month", month) :
+                new ObjectParameter("month", typeof(int));
+    
+            var owneridParameter = ownerid.HasValue ?
+                new ObjectParameter("Ownerid", ownerid) :
+                new ObjectParameter("Ownerid", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Medicine_sold_per_Month_Result>("Medicine_sold_per_Month", yearParameter, monthParameter, owneridParameter);
+        }
     }
 }
