@@ -1,5 +1,4 @@
 ﻿@model E_Medicine_Store.Models.ReportClass
-
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -15,16 +14,130 @@
 
     }
 
-   
-
-    @using (Ajax.BeginForm("MYReport", "Report",
-                                            new AjaxOptions { UpdateTargetId = "Report" }))
+    @using (Ajax.BeginForm("StaffPosted", "Report",
+                                                    new AjaxOptions { UpdateTargetId = "Deatils8" }))
     {
-        <div id="Report"></div>
+        <div id="Deatils8"></div>
+        <ul>
+            <li>
+                @Html.Label("Post")
+               
+                @Html.DropDownList("PostList", new List<SelectListItem>
+                         {
+                         new SelectListItem{ Text="Supplier", Value = "Supplier" },
+                         new SelectListItem{ Text="Accountant", Value = "Accountant" },
+                         new SelectListItem{ Text="pharmacist", Value = "pharmacist" },
+                         new SelectListItem{ Text="Worker", Value = "Worker" },
+                        
+                         }, new { htmlAttributes = new { @class = "form-control" } })
+               
 
-            <button style="margin-top:20px; margin-bottom:20px">Generate Company wise stock Report</button>
+            </li>
+
+        </ul>
+            <button style="margin-bottom:20px">Generate Post Wise Staff  Report</button>
 
     }
+  
+    
+    @using (Ajax.BeginForm("CategoryWiseMedicine", "Report",
+                                                                    new AjaxOptions { UpdateTargetId = "Deatils9" }))
+    {
+        <div id="Deatils9"></div>
+        <ul>
+            <li>
+                @Html.Label("Category") 
+
+                @Html.DropDownList("CategoryOfMedicine", new List<SelectListItem>
+                         {
+                         new SelectListItem{ Text="Sugar", Value = "Sugar" },
+                         new SelectListItem{ Text="Asthma", Value = "Asthma" },
+                         new SelectListItem{ Text="Cough", Value = "Cough" },
+                         new SelectListItem{ Text="Flu", Value = "Flu" },
+
+                         }, new { htmlAttributes = new { @class = "form-control" } })
+
+
+    
+
+                
+
+            </li>
+
+        </ul>
+        <button style="margin-bottom:20px">Generate Category Wise Medicine  Report</button>
+
+    }
+    
+
+    @using (Ajax.BeginForm("MonthlyStaffSalary", "Report",
+                                                    new AjaxOptions { UpdateTargetId = "Deatils10" }))
+    {
+        <div id="Deatils10"></div>
+       
+            
+            <ul>
+                <li>
+                    @Html.Label("PaidDate")
+                    <input type="date" class="form-control" id="PaidDate"
+                           name="PaidDate" />
+
+                </li>
+
+            </ul>
+            <button style="margin-bottom:20px">Generate Salary of Staff per Month Report</button>
+
+        }
+    @using (Ajax.BeginForm("CompanyWiseStock", "Report",
+                                                    new AjaxOptions { UpdateTargetId = "Deatils12" }))
+    {
+        <div id="Deatils12"></div>
+        <ul>
+            <li>
+                @Html.Label("CompanyID")
+
+                @Html.DropDownList("CompanyID", new List<SelectListItem>
+                         {
+                         new SelectListItem{ Text="1", Value = "1" },
+                         new SelectListItem{ Text="2", Value = "2" },
+                   
+                         new SelectListItem{ Text="3", Value = "3" },
+                         new SelectListItem{ Text="4", Value = "4" },
+                         new SelectListItem{ Text="5", Value = "5" },
+                         new SelectListItem{ Text="6", Value = "6" },
+                         new SelectListItem{ Text="7", Value = "7" },
+                         new SelectListItem{ Text="8", Value = "8" },
+                         new SelectListItem{ Text="9", Value = "9" },
+                         new SelectListItem{ Text="10", Value = "10" },
+                         new SelectListItem{ Text="11", Value = "11" },
+                         new SelectListItem{ Text="12", Value = "12" },
+                         new SelectListItem{ Text="13", Value = "13" },
+                         new SelectListItem{ Text="14", Value = "14" },
+                         new SelectListItem{ Text="15", Value = "15" },
+                        
+                         }, new { htmlAttributes = new { @class = "form-control" } })
+               
+
+            </li>
+
+        </ul>
+            <button style="margin-bottom:20px">Generate Company Wise Stock Report</button>
+
+    }
+
+
+           
+    
+    
+    
+    
+    
+    
+    
+    
+     
+
+  
     @using (Ajax.BeginForm("Attendence_Per_day", "Report",
                                         new AjaxOptions { UpdateTargetId = "Deatils7" }))
     {

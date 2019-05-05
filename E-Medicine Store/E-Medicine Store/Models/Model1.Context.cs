@@ -63,17 +63,17 @@ namespace E_Medicine_Store.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CategoryWiseMedicine_Result>("CategoryWiseMedicine", ownerIdParameter, categoryNameParameter);
         }
     
-        public virtual ObjectResult<CompanyWiseStock_Result> CompanyWiseStock(string companyName, Nullable<int> ownerID)
+        public virtual ObjectResult<CompanyWiseStock_Result> CompanyWiseStock(Nullable<int> companyID, Nullable<int> ownerID)
         {
-            var companyNameParameter = companyName != null ?
-                new ObjectParameter("CompanyName", companyName) :
-                new ObjectParameter("CompanyName", typeof(string));
+            var companyIDParameter = companyID.HasValue ?
+                new ObjectParameter("CompanyID", companyID) :
+                new ObjectParameter("CompanyID", typeof(int));
     
             var ownerIDParameter = ownerID.HasValue ?
                 new ObjectParameter("OwnerID", ownerID) :
                 new ObjectParameter("OwnerID", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CompanyWiseStock_Result>("CompanyWiseStock", companyNameParameter, ownerIDParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CompanyWiseStock_Result>("CompanyWiseStock", companyIDParameter, ownerIDParameter);
         }
     
         public virtual ObjectResult<MonthlySalaryReport_Result> MonthlySalaryReport(Nullable<System.DateTime> salaryMonth, Nullable<int> ownerId)

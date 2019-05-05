@@ -277,7 +277,6 @@ C:\Users\Abubakar\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Sto
 C:\Users\Abubakar\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\Abubakar\Documents\GitHub\dbpro_173_175\E-Medicine Store\E-Medicine Store\bin\stdole.dll
 E:\dbpro_173_175\E-Medicine Store\E-Medicine Store\obj\Debug\E-Medicine Store.csprojResolveAssemblyReference.cache
-C:\Users\Ahmad\Downloads\Compressed\dbpro_173_175-20190504T065615Z-001\dbpro_173_175\E-Medicine Store\E-Medicine Store\obj\Debug\E-Medicine Store.csprojResolveAssemblyReference.cache
 C:\Users\Ahmad\Downloads\Compressed\dbpro_173_175-20190504T065615Z-001\dbpro_173_175\E-Medicine Store\E-Medicine Store\bin\ApplicationInsights.config
 C:\Users\Ahmad\Downloads\Compressed\dbpro_173_175-20190504T065615Z-001\dbpro_173_175\E-Medicine Store\E-Medicine Store\bin\roslyn\csc.exe
 C:\Users\Ahmad\Downloads\Compressed\dbpro_173_175-20190504T065615Z-001\dbpro_173_175\E-Medicine Store\E-Medicine Store\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -375,3 +374,4 @@ C:\Users\Ahmad\Downloads\Compressed\dbpro_173_175-20190504T065615Z-001\dbpro_173
 C:\Users\Ahmad\Downloads\Compressed\dbpro_173_175-20190504T065615Z-001\dbpro_173_175\E-Medicine Store\E-Medicine Store\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Ahmad\Downloads\Compressed\dbpro_173_175-20190504T065615Z-001\dbpro_173_175\E-Medicine Store\E-Medicine Store\obj\Debug\E-Medicine Store.dll
 C:\Users\Ahmad\Downloads\Compressed\dbpro_173_175-20190504T065615Z-001\dbpro_173_175\E-Medicine Store\E-Medicine Store\obj\Debug\E-Medicine Store.pdb
+C:\Users\Ahmad\Downloads\Compressed\dbpro_173_175-20190504T065615Z-001\dbpro_173_175\E-Medicine Store\E-Medicine Store\obj\Debug\E-Medicine Store.csprojResolveAssemblyReference.cache

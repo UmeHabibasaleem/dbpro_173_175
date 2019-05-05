@@ -68,7 +68,7 @@
           <Property Name="SalaryID" Type="int" Nullable="false" />
           <Property Name="StaffID" Type="int" Nullable="false" />
           <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="PaidDate" Type="date" />
+          <Property Name="PaidDate" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="Salesman">
           <Key>
@@ -312,7 +312,7 @@
           <Parameter Name="CategoryName" Type="varchar" Mode="In" />
         </Function>
         <Function Name="CompanyWiseStock" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="CompanyName" Type="nvarchar" Mode="In" />
+          <Parameter Name="CompanyID" Type="int" Mode="In" />
           <Parameter Name="OwnerID" Type="int" Mode="In" />
         </Function>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
@@ -493,7 +493,7 @@
           <Property Name="SalaryID" Type="Int32" Nullable="false" />
           <Property Name="StaffID" Type="Int32" Nullable="false" />
           <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="PaidDate" Type="DateTime" Precision="0" />
+          <Property Name="PaidDate" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="Salary" Relationship="Self.FK_SalaryStatus_Salary" FromRole="SalaryStatus" ToRole="Salary" />
           <NavigationProperty Name="Staff" Relationship="Self.FK_SalaryStatus_Staff" FromRole="SalaryStatus" ToRole="Staff" />
         </EntityType>
@@ -815,7 +815,7 @@
             <Parameter Name="CategoryName" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="CompanyWiseStock" ReturnType="Collection(DB5Model.CompanyWiseStock_Result)">
-            <Parameter Name="CompanyName" Mode="In" Type="String" />
+            <Parameter Name="CompanyID" Mode="In" Type="Int32" />
             <Parameter Name="OwnerID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="MonthlySalaryReport" ReturnType="Collection(DB5Model.MonthlySalaryReport_Result)">
@@ -888,7 +888,7 @@
           <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
           <Property Type="Int32" Name="SalaryAmount" Nullable="false" />
           <Property Type="String" Name="Status" Nullable="false" MaxLength="50" />
-          <Property Type="DateTime" Name="PaidDate" Nullable="true" />
+          <Property Type="DateTime" Name="PaidDate" Nullable="false" />
         </ComplexType>
         <ComplexType Name="PostedStaffs_Result">
           <Property Type="Int32" Name="StaffID" Nullable="false" />

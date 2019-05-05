@@ -17,6 +17,6 @@ namespace E_Medicine_Store.Models
         public string FirstName { get; set; }
         public int SalaryAmount { get; set; }
         public string Status { get; set; }
-        public Nullable<System.DateTime> PaidDate { get; set; }
+        public System.DateTime PaidDate { get; set; }
     }
 }

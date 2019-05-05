@@ -63,7 +63,7 @@
     <Property Name="SalaryID" Type="int" Nullable="false" />
     <Property Name="StaffID" Type="int" Nullable="false" />
     <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="PaidDate" Type="date" />
+    <Property Name="PaidDate" Type="date" Nullable="false" />
   </EntityType>
   <EntityType Name="Salesman">
     <Key>
@@ -307,7 +307,7 @@
     <Parameter Name="CategoryName" Type="varchar" Mode="In" />
   </Function>
   <Function Name="CompanyWiseStock" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="CompanyName" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyID" Type="int" Mode="In" />
     <Parameter Name="OwnerID" Type="int" Mode="In" />
   </Function>
   <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />

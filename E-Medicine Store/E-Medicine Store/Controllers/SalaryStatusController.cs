@@ -28,6 +28,7 @@ namespace E_Medicine_Store.Controllers
                     obj.SalaryID = s.SalaryID;
                     obj.StaffID = s.StaffID;
                     obj.Status = s.Status;
+                    obj.PaidDate = s.PaidDate;
                     viewList.Add(obj);
                 }
                 return View(viewList);
@@ -53,7 +54,7 @@ namespace E_Medicine_Store.Controllers
                 obj.SalaryID = s.SalaryID;
                 obj.StaffID = s.StaffID;
                 obj.Status = s.Status;
-
+                obj.PaidDate = s.PaidDate;
 
             }
             return View(obj);
@@ -88,6 +89,7 @@ namespace E_Medicine_Store.Controllers
                 s.SalaryID = obj.SalaryID;
                 s.StaffID = obj.StaffID;
                 s.Status= obj.Status;
+                s.PaidDate = obj.PaidDate;
                 db.SalaryStatus.Add(s);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -115,6 +117,7 @@ namespace E_Medicine_Store.Controllers
                 obj.StaffID = s.StaffID;
                 obj.SalaryID = s.SalaryID;
                 obj.Status = s.Status;
+                obj.PaidDate = s.PaidDate;
                
             }
             return View(obj);
@@ -133,7 +136,7 @@ namespace E_Medicine_Store.Controllers
                 db.SalaryStatus.Find(id).SalaryID = obj.SalaryID;
                 db.SalaryStatus.Find(id).StaffID = obj.StaffID;
                 db.SalaryStatus.Find(id).Status = obj.Status;
-               
+                db.SalaryStatus.Find(id).PaidDate = obj.PaidDate;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -159,6 +162,7 @@ namespace E_Medicine_Store.Controllers
                 obj.StaffID = s.StaffID;
                 obj.SalaryID = s.SalaryID;
                 obj.Status = s.Status;
+                obj.PaidDate = s.PaidDate;
                 
             }
             return View(obj);

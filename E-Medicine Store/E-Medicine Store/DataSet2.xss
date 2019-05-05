@@ -7,10 +7,10 @@
 <DiagramLayout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ex:showrelationlabel="False" ViewPortX="0" ViewPortY="0" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
   <Shapes>
     <Shape ID="DesignTable:AllStaffs" ZOrder="5" X="506" Y="196" Height="267" Width="193" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
-    <Shape ID="DesignTable:CategoryWiseMedicine" ZOrder="4" X="802" Y="219" Height="191" Width="278" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
-    <Shape ID="DesignTable:CompanyWiseStock" ZOrder="3" X="158" Y="280" Height="153" Width="260" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
-    <Shape ID="DesignTable:MonthlySalaryReport" ZOrder="2" X="726" Y="19" Height="172" Width="269" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
-    <Shape ID="DesignTable:PostedStaffs" ZOrder="1" X="1108" Y="251" Height="267" Width="217" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
+    <Shape ID="DesignTable:CompanyWiseStock" ZOrder="4" X="158" Y="280" Height="153" Width="260" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
+    <Shape ID="DesignTable:PostedStaffs" ZOrder="3" X="1108" Y="251" Height="267" Width="217" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
+    <Shape ID="DesignTable:MonthlySalaryReport" ZOrder="2" X="847" Y="55" Height="172" Width="269" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
+    <Shape ID="DesignTable:CompanyWiseStock1" ZOrder="1" X="754" Y="306" Height="153" Width="267" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

@@ -18,7 +18,7 @@ namespace E_Medicine_Store.Models
         public int SalaryID { get; set; }
         public int StaffID { get; set; }
         public string Status { get; set; }
-        public Nullable<System.DateTime> PaidDate { get; set; }
+        public System.DateTime PaidDate { get; set; }
     
         public virtual Salary Salary { get; set; }
         public virtual Staff Staff { get; set; }
